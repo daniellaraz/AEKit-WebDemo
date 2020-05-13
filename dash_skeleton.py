@@ -37,7 +37,7 @@ app.layout = html.Div([
             html.H3("Terms to Know: ", id = "terms", style = {'font-weight': 'bold', 'font-family': 'Monaco'}),
             html.P("The following are some helpful terms for better understanding this demo."),
             html.Span("Similarity Score: ", style={'font-weight': 'bold'}),
-            " a value ",
+            " is a numerical value that represents how similar two faces are. Facial recognition softwares convert images into mathematical representations that can then be used to compare various faces and find potential matches. For purposes of this demo, the greater the similarity score, the more similar two faces are.",
             "    ",
                 ]),
         html.Div([
