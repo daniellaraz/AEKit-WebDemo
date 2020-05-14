@@ -24,20 +24,20 @@ app.layout = html.Div([
             html.P("The goal of this demo is to highlight some of the harms of facial recognition systems. Though there are many issues with facial recognition software, this tool demonstrates two in particular. "),
             html.Span("First, ", style={'font-weight': 'bold'}),
             "we illustrate how facial recognition software relies on thresholds, which are often arbitrarily set, to determine whether two faces in a photo are a match. ",
-            "At its simplest, two images are compared and given a numerical value on a continuous scale that represents how similar the images are. ",
+            "At its simplest, two images are compared and given a numerical value that represents on a continuous scale how similar the images are. ",
             "A cut-off value is selected, meaning that any similarity score greater than that cut-off value will be considered a match, and anything below or equal to that value is not considered a match. ",
             "But, what decides this cut-off value? ",
                 ]),
         html.Div([
              html.Span("Second, ", style={"font-weight": "bold"}), 
-             " we demonstrate, as has been shown in academic and policy literature, that facial recognition software misidentifies people of color, specifically women of color, more often than it does white people. Yet, facial recognition is frequently used to police black and brown communities - the very people the software identifies most poorly.", 
+             " we demonstrate, as has been shown in academic and policy literature, that facial recognition software misidentifies people of color, specifically women of color, more often than it does white people. Yet, facial recognition software is frequently used to police black and brown communities - the very people the software identifies most poorly.", 
             ]),
         # terms to know section
         html.Div([
             html.H3("Terms to Know: ", id = "terms", style = {'font-weight': 'bold', 'font-family': 'Monaco'}),
             html.P("The following are some helpful terms for better understanding this demo."),
             html.Span("Similarity Score: ", style={'font-weight': 'bold'}),
-            " is a numerical value that represents how similar two faces are. Facial recognition softwares convert images into mathematical representations that can then be used to compare various faces and find potential matches. For purposes of this demo, the greater the similarity score, the more similar two faces are.",
+            " is a numerical value that represents how similar two faces are. Facial recognition software convert images into mathematical representations that can then be used to compare various faces and find potential matches. For purposes of this demo, the greater the similarity score, the more similar two faces are.",
             "    ",
                 ]),
         html.Div([
@@ -48,7 +48,7 @@ app.layout = html.Div([
              html.Span("True Positive: ", style={"font-weight": "bold"}), 
              "occurs when two images, which are indeed of the same person, are correctly labeled as a match. ", 
             "In our demo, true positives are outlined in ",
-             html.Span('green', style={'background-color': '#A6CA45', 'font-weight': 'bold'}),
+             html.Span('green.', style={'background-color': '#A6CA45', 'font-weight': 'bold'}),
             ]),    
 
         # instructions section
@@ -57,7 +57,7 @@ app.layout = html.Div([
         html.Div([
             "2. Under 'Matches' you'll see those faces that have matched with the face under 'Current Subject'. Below each match is the similarity score between the 'Current Subject' and that match. For ease of interpretation, in this demo the larger the similarity score, the more similar two images are. The only true positive match is that which is outlined in green. All other matches are false positives.",
                 ]),
-        html.P("3. In the 'Threshold' section you'll see a slider. Move the slider by clicking on the numbered intervals. This changes the minimum similarity score required in order to be considered a match. As you move the slider, you'll see some matches fade away as their similarity score exceeds the minimum threshold you've set. "),
+        html.P("3. In the 'Threshold' section you'll see a slider. Move the slider by clicking on the numbered intervals. This changes the minimum similarity score required in order to be considered a match. As you move the slider, you'll see some matches fade away as their similarity score does not meet the minimum threshold you've set. "),
         html.P("4. Under 'Current Subject', you'll see a list of other options. Click through the diverse list of celebrities, playing around with the threshold slider as well. Take note of how effecitvely, or ineffectively, the software identifies true matches. "),
             ]),
 
@@ -157,15 +157,15 @@ app.layout = html.Div([
      html.Div([
 
      html.Span("ICE Uses Facial Recognition To Sift State Driver's License Record", style = {'font-weight': 'bold'}),
-     ": In July of 2019, researchers at Georgetown University Law Center found that Immigration and Customs Enforcement (ICE) agents mined millions of driver license photographs in search of facial recognition matches to target undocumented migrants who have legally obtained driver licenses. ICE did this illegally, as they did not have congressional approval to access DMV databases of driver license photos. In this scenario, the use of facial recognition technology clearly put undocumented migrants at risk, and increased accuracy of the facial recognition software would have heightened the danger towards undocumented migrants. Not only does facial recognition software work less well on people of color, even if it is accurate, it's used to target communities of color. ",
-     dcc.Link('Read the NPR news coverage of this case study here.', href='https://www.npr.org/2019/07/08/739491857/ice-uses-facial-recognition-to-sift-state-drivers-license-records-researchers-sa'),
+     ": In July of 2019, researchers at Georgetown University Law Center found that Immigration and Customs Enforcement (ICE) agents mined millions of driver's license photographs in search of facial recognition matches to target undocumented migrants who have legally obtained driver's licenses. ICE did this illegally, as they did not have congressional approval to access DMV databases of driver's license photos.  In this scenario, the use of facial recognition technology clearly put undocumented migrants at risk. Further, increased accuracy would have only heightened the danger undocumented migrants face and increased targeting of communities of color. ",
+     dcc.Link('Read NPR news coverage of this case here.', href='https://www.npr.org/2019/07/08/739491857/ice-uses-facial-recognition-to-sift-state-drivers-license-records-researchers-sa'),
      ]),
      html.H4(' '),
      html.Span('Washington County Police Department', style = {'font-weight': 'bold'}),
-     ": In 2017, the Washington County Police Department in Oregon pioneered the use of Amazon's facial recognition software tool, Rekognition, to compare surveillance footage of people's faces to a database of mug shot photos to identify burglary suspects. Oregon Live reports that deputies are permitted to run artist sketches into the search. As our demo illustrates, the use of facial recognition software often results in false positives, putting innocent people at risk for being targeted and arrested. Since the software is less accurate on people of color, this community faces a heightened risk of being targeted by law enforcement. The similarity threshold that the police department uses impacts their rate of false positives. Although Amazon recommends only using its Rekognition tool with a 99% similarity threshold to identify suspects for law enforcement purposes, police departments are not required to follow these guidelines. ",
-     dcc.Link('Washington Post Coverage featured in Oregon Live, ', href='https://www.oregonlive.com/washingtoncounty/2019/05/amazons-facial-recognition-technology-is-supercharging-washington-county-police.html'),
-     dcc.Link('KGW  Portland Coverage, ', href='https://www.kgw.com/article/money/aclu-calls-out-amazon-washington-co-sheriffs-office-for-facial-recognition-tech/283-557099068'),
-     dcc.Link('Official Amazon guidelines', href = 'https://docs.aws.amazon.com/rekognition/latest/dg/collections.html')
+     ": In 2017, the Washington County Police Department in Oregon pioneered the use of Amazon's facial recognition software tool, Rekognition, to compare surveillance footage of people's faces to a database of mug shot photos in an attempt to identify burglary suspects. Oregon Live reports that deputies are permitted to run artist sketches into the search. As our demo illustrates, the use of facial recognition software often results in false positives, putting innocent people at risk of being targeted and arrested. Given the software is less accurate on people of color and results in more false positives for people of color, this community faces heightened risk of being targeted by law enforcement. The similarity threshold that the police department uses affects their rate of false positives. Although Amazon recommends only using its Rekognition tool with a 99 percent similarity threshold when identifying suspects for law enforcement purposes, police departments are not required to follow these guidelines. ",
+     dcc.Link('Read Washington Post coverage featured in Oregon Live here, ', href='https://www.oregonlive.com/washingtoncounty/2019/05/amazons-facial-recognition-technology-is-supercharging-washington-county-police.html'),
+     dcc.Link('coverage in KGW Portland Coverage here, ', href='https://www.kgw.com/article/money/aclu-calls-out-amazon-washington-co-sheriffs-office-for-facial-recognition-tech/283-557099068'),
+     dcc.Link('and read official Amazon guidelines here', href = 'https://docs.aws.amazon.com/rekognition/latest/dg/collections.html')
 
 
     ], id = "case_studies"),
@@ -177,7 +177,7 @@ app.layout = html.Div([
      ": We used Open Face's Open Source Facial Recognition model to run our images and determine matches. We ran Open Face's model using a Docker container. We edited Open Face's image comparison Python file to only compare one specified image against the entire dataset of images, instead of each image in the dataset to every other image.",
      html.H4(' '),
      html.Span("Images", style = {'font-weight': 'bold'}),
-     ": We obtained nearly all our images from Labeled Faces in the Wild, an  open dataset of celebrity photos. For celebrity subjects who did not have more than one photo in the Labeled Faces in the Wild dataset, we supplemented with images from Google Image searches."
+     ": We obtained nearly of all our images from Labeled Faces in the Wild, an  open dataset of celebrity photos. For celebrity subjects who did not have more than one photo in the Labeled Faces in the Wild dataset, we supplemented with images from Google Image searches."
      ]),
     ], id = "resources")
 ])
