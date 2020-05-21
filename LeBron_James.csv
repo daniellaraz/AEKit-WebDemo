@@ -1,1 +1,9 @@
-Name,Difference,Similarity,File,Subject,Subject_File,MatchJacqueline Edwards,0.819,0.681,/assets/Jacqueline_Edwards_0001.jpg,LeBron James,/assets/Lebron_James_0002.jpg,FALSEJason Campbell,0.806,0.694,/assets/Jason_Campbell_0001.jpg,,,FALSEJulius Erving,0.724,0.776,/assets/Julius_Erving_0001.jpg,,,FALSEMarquis Estill,0.719,0.781,/assets/Marquis_Estill_0001.jpg,,,FALSEJulian Battle,0.655,0.845,/assets/Julian_Battle_0001.jpg,,,FALSEKwame Kilpatrick,0.442,1.058,/assets/Kwame_Kilpatrick_0001.jpg,,,FALSELarry Thompson,0.151,1.349,/assets/Larry_Thompson_0001.jpg,,,FALSELeBron James,0.116,1.384,/assets/LeBron_James_0001.jpg,,,TRUE
+Name,Difference,Similarity,File,Subject,Subject_File,Match
+Jacqueline Edwards,0.819,0.681,/assets/Jacqueline_Edwards_0001.jpg,LeBron James,/assets/LeBron_James_0002.jpg,FALSE
+Jason Campbell,0.806,0.694,/assets/Jason_Campbell_0001.jpg,,,FALSE
+Julius Erving,0.724,0.776,/assets/Julius_Erving_0001.jpg,,,FALSE
+Marquis Estill,0.719,0.781,/assets/Marquis_Estill_0001.jpg,,,FALSE
+Julian Battle,0.655,0.845,/assets/Julian_Battle_0001.jpg,,,FALSE
+Kwame Kilpatrick,0.442,1.058,/assets/Kwame_Kilpatrick_0001.jpg,,,FALSE
+Larry Thompson,0.151,1.349,/assets/Larry_Thompson_0001.jpg,,,FALSE
+LeBron James,0.116,1.384,/assets/LeBron_James_0001.jpg,,,TRUE
