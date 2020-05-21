@@ -147,8 +147,17 @@ app.layout = html.Div([
         dcc.Slider(
         id='threshold-slider',
         min=-0.0,
+        marks={
+        0: '0 °F',
+        3: '3 °F',
+        5: '5 °F',
+        7.65: '7.65 °F',
+        10: '10 °F'
+    },
+
         value = 0.0
-    ), html.Div(
+    ), 
+    html.Div(
      id='slider-output-container', className = 'slider'
     )], id = 'slider')], id = "interactive"),
 
@@ -333,6 +342,6 @@ def update_output(value):
 
 if __name__ == '__main__':
     port = os.environ.get('PORT') or 8035
-   # debug = 'DYNO' not in os.environ
+    debug = 'DYNO' not in os.environ
    # app.run_server(port=port, debug=debug)
-    app.run_server(port=port)
+   app.run_server(port=port)
