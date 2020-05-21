@@ -148,7 +148,7 @@ app.layout = html.Div([
         dcc.Slider(
         id='threshold-slider',
         min=-0.0,
-        # value = 0.0
+        value = 0.0
     ),
     html.Div(
      id='slider-output-container', className = 'slider'
@@ -198,10 +198,7 @@ def update_output(value):
 
     #determine max similarity
     similarity = results['Similarity']
-    #max_sim = max(similarity)
 
-    #determine upper limit for threshold rounded to nearest 0.5
-    #threshold_upper = math.ceil(max_sim*2)/2
     threshold_upper = 1.5
 
     #determine step for threshold
