@@ -73,7 +73,7 @@ app.layout = html.Div([
 
 
     # stores current subject data
-    html.Div([ html.Div(id='current_data_similarity', style={'display': 'none'}, children=[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]),
+    html.Div([ html.Div(id='current_data_similarity', style={'display': 'none'}, children=[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0])),
     html.Div(id='current_data_names', style={'display': 'none'}, children=['','','','','','','','']),
     html.Div(id='current_match_values', style={'display': 'none'}, children=[False,False,False,False,False,False,False,False]),
 
