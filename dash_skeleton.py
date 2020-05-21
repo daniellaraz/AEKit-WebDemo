@@ -29,8 +29,8 @@ app.layout = html.Div([
             "But, what decides this cut-off value? ",
                 ]),
         html.Div([
-             html.Span("Second, ", style={"font-weight": "bold"}), 
-             " we demonstrate, as has been shown in academic and policy literature, that facial recognition software misidentifies people of color, specifically women of color, more often than it does white people. Yet, facial recognition software is frequently used to police black and brown communities - the very people the software identifies most poorly.", 
+             html.Span("Second, ", style={"font-weight": "bold"}),
+             " we demonstrate, as has been shown in academic and policy literature, that facial recognition software misidentifies people of color, specifically women of color, more often than it does white people. Yet, facial recognition software is frequently used to police black and brown communities - the very people the software identifies most poorly.",
             ]),
         # terms to know section
         html.Div([
@@ -41,18 +41,18 @@ app.layout = html.Div([
             "    ",
                 ]),
         html.Div([
-             html.Span("False Positive: ", style={"font-weight": "bold"}), 
-             "occurs when images that are not of the same person are incorrectly labeled as a match because their similarity score exceeded the minimum required to be considered a match.", 
+             html.Span("False Positive: ", style={"font-weight": "bold"}),
+             "occurs when images that are not of the same person are incorrectly labeled as a match because their similarity score exceeded the minimum required to be considered a match.",
             ]),
         html.Div([
-             html.Span("True Positive: ", style={"font-weight": "bold"}), 
-             "occurs when two images, which are indeed of the same person, are correctly labeled as a match. ", 
+             html.Span("True Positive: ", style={"font-weight": "bold"}),
+             "occurs when two images, which are indeed of the same person, are correctly labeled as a match. ",
             "In our demo, true positives are outlined in ",
              html.Span('green.', style={'background-color': '#A6CA45', 'font-weight': 'bold'}),
-            ]),    
+            ]),
 
         # instructions section
-        html.H3('Instructions:', id='instructions', style={'font-family': 'Monaco'}),        
+        html.H3('Instructions:', id='instructions', style={'font-family': 'Monaco'}),
         html.P("1. Enter full screen in your browser. You'll see the demo has 3 main sections - 'Current Subject, 'Matches', and 'Threshold'. "),
         html.Div([
             "2. Under 'Matches' you'll see those faces that have matched with the face under 'Current Subject'. Below each match is the similarity score between the 'Current Subject' and that match. For ease of interpretation, in this demo the larger the similarity score, the more similar two images are. The only true positive match is that which is outlined in green. All other matches are false positives.",
@@ -77,7 +77,7 @@ app.layout = html.Div([
     html.Div(id='current_data_names', style={'display': 'none'}, children=['','','','','','','','']),
     html.Div(id='current_match_values', style={'display': 'none'}, children=[False,False,False,False,False,False,False,False]),
 
-#    subject and radio button options to switch subject 
+#    subject and radio button options to switch subject
     html.Div([
         html.H4('Current Subject:'),
         html.Img(id='celeb'), dcc.RadioItems(
@@ -103,7 +103,9 @@ app.layout = html.Div([
 
     # creates divs for images
     html.Div([
-        html.H4('Current Matches:'),
+    html.Div([
+        html.H4('Current Matches:')
+        ], className = 'matches'),
         html.Div([
             html.Img(id='img1'), html.Figcaption(id='name1'),
             html.Figcaption(id='sim1')
@@ -288,7 +290,7 @@ def update_output(threshold, similarity, names, match):
 
 #threshold image 6
 @app.callback([Output('img6', 'style'),Output('name6', 'children'), Output('sim6','children')],
-    [Input('threshold-slider', 'value'), Input('current_data_similarity', 'children'), 
+    [Input('threshold-slider', 'value'), Input('current_data_similarity', 'children'),
     Input('current_data_names', 'children'), Input('current_match_values', 'children')])
 def update_output(threshold, similarity, names, match):
     if similarity[5] >= threshold:
@@ -333,6 +335,6 @@ def update_output(value):
 
 if __name__ == '__main__':
     port = os.environ.get('PORT') or 8035
-   # debug = 'DYNO' not in os.environ
-   # app.run_server(port=port, debug=debug)
+    debug = 'DYNO' not in os.environ
+    app.run_server(port=port, debug=debug)
     app.run_server(port=port)
