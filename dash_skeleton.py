@@ -142,22 +142,13 @@ app.layout = html.Div([
             ],
             className = 'box'),
 
-
 # slider
 
     html.Div([
         dcc.Slider(
         id='threshold-slider',
         min=-0.0,
-        marks={
-        0: '0 °F',
-        3: '3 °F',
-        5: '5 °F',
-        7.65: '7.65 °F',
-        10: '10 °F'
-    },
-
-        value = 0.0
+        # value = 0.0
     ),
     html.Div(
      id='slider-output-container', className = 'slider'
@@ -196,7 +187,7 @@ app.layout = html.Div([
 #loads all images and slider with current subject
 @app.callback([Output('celeb', 'src'), Output('img1', 'src'), Output('img2', 'src'), Output('img3', 'src'), Output('img4', 'src'), Output('img5', 'src'),
 Output('img6', 'src'), Output('img7', 'src'), Output('img8', 'src'), Output('threshold-slider', 'max'), Output('threshold-slider', 'step'),
-Output('threshold-slider', 'marks'), Output('current_data_similarity', 'children'), Output('current_data_names', 'children'), Output('current_match_values', 'children'), Output('threshold-slider', 'value')], [Input('subject_options', 'value')])
+Output('threshold-slider', 'marks'), Output('current_data_similarity', 'children'), Output('current_data_names', 'children'), Output('current_match_values', 'children')], [Input('subject_options', 'value')])
 def update_output(value):
     print("updating output: ", value)
     #data = load_data(value)
@@ -207,10 +198,11 @@ def update_output(value):
 
     #determine max similarity
     similarity = results['Similarity']
-    max_sim = max(similarity)
+    #max_sim = max(similarity)
 
     #determine upper limit for threshold rounded to nearest 0.5
-    threshold_upper = math.ceil(max_sim*2)/2
+    #threshold_upper = math.ceil(max_sim*2)/2
+    threshold_upper = 1.5
 
     #determine step for threshold
     step = threshold_upper/10
@@ -235,7 +227,7 @@ def update_output(value):
 
     return [subject_image, images[0], images[1], images[2], images[3], images[4],
         images[5], images[6], images[7], threshold_upper,
-        step, steps, similarity, names, matches, 0.0]
+        step, steps, similarity, names, matches]
 
 # threshold image 1
 @app.callback([Output('img1', 'style'), Output('name1', 'children'), Output('sim1', 'children')],
