@@ -10,27 +10,56 @@
     float: left;
     display: inline;
     margin-left: 20px;
+
 }
  #celeb {
      width: 230px;
      height: 230px;
+     margin-bottom: 10px;
  }
 
 .box {
-    /*margin-left: 350px;*/
+
+}
+
+.threshold-slider{
+
+}
+
+#matches {
+
+}
+#matches > div {
+
+}
+
+.pics{
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
-}
-
-.matches {
-  position: absolute;
+    margin-bottom: 50px;
 }
 
  #interactive {
      background-color: #ffffff;
      border-style: solid;
  }
+
+ #mismatches {
+    float: right;
+    position: relative;
+    margin-top: 23px;
+
+
+ }
+
+ #mismatch_title {
+    position: absolute;
+    margin-left: 115px;
+    font-weight: bold;
+ }
+
+
 
 
 
@@ -66,23 +95,37 @@ figcaption {
 }
 
 #slider {
-    justify-content: flex-end;
-    margin-top: 95px;
+    justify-content: flex-start;
+    /*display: flex;*/
+    /*flex-flow: row wrap;*/
+    /*justify-content: space-around;*/
+
 }
 #slider-output-container {
     margin-top: 20px;
-    margin-right: 20px;
-    margin-left: 20px;
+}
+
+#slider-output-container2 {
+    margin-top: 20px;
+}
+
+#threshold_title {
+    margin-top: 20px;
 }
 
 #threshold-slider {
-    margin-top: 20px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
     margin-right: 20px;
     margin-left: 20px;
+    margin-top: 20px;
 }
 
 #subject_options {
     display: grid;
+    float: left;
+    margin-top: 23px;
 }
 
 #main_wrapper {

@@ -73,13 +73,15 @@ app.layout = html.Div([
 
 
     # stores current subject data
-    html.Div([ html.Div(id='current_data_similarity', style={'display': 'none'}, children=[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0])),
+    html.Div([
+    html.Div(id='current_data_similarity', style={'display': 'none'}, children=[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]),
     html.Div(id='current_data_names', style={'display': 'none'}, children=['','','','','','','','']),
     html.Div(id='current_match_values', style={'display': 'none'}, children=[False,False,False,False,False,False,False,False]),
 
 #    subject and radio button options to switch subject
     html.Div([
         html.H4('Current Subject:'),
+
         html.Img(id='celeb'), dcc.RadioItems(
     options=[
         {'label': 'LeBron James', 'value': 'LeBron_James.csv'},
@@ -96,16 +98,46 @@ app.layout = html.Div([
     value='LeBron_James.csv',
     labelStyle={'display': 'inline-block'},
     id = 'subject_options'
-)], id='subject'),
+), html.Div(id="mismatch_title", className="mismatch_title"),
+html.Div([
+html.Div(id='subject1_mismatches', className = 'mismatches1'),
+html.Div(id='subject2_mismatches', className = 'mismatches2'),
+html.Div(id='subject3_mismatches', className = 'mismatches3'),
+html.Div(id='subject4_mismatches', className = 'mismatches4'),
+html.Div(id='subject5_mismatches', className = 'mismatches5'),
+html.Div(id='subject6_mismatches', className = 'mismatches6'),
+html.Div(id='subject7_mismatches', className = 'mismatches7'),
+html.Div(id='subject8_mismatches', className = 'mismatches8'),
+html.Div(id='subject9_mismatches', className = 'mismatches9'),
+html.Div(id='subject10_mismatches', className = 'mismatches10')
+], id="mismatches")],
+id='subject'),
+
+
 
 
 
 
     # creates divs for images
     html.Div([
-    html.Div([
-        html.H4('Current Matches:')
-        ], className = 'matches'),
+    html.Div([html.Div([
+        html.H4('Threshold:')
+        ], id = 'threshold_title'),
+            dcc.Slider(
+            id='threshold-slider',
+            min=-0.0,
+            value = 0.0
+        ),
+        html.Div(
+         id='slider-output-container', className = 'slider'
+        ), html.Div(
+         id='slider-output-container2', className = 'slider'
+        ),
+        html.Div([
+            html.H4('Current Matches:')
+            ], id = 'matches')], id = 'slider'),
+
+        html.Div([
         html.Div([
             html.Img(id='img1'), html.Figcaption(id='name1'),
             html.Figcaption(id='sim1')
@@ -138,21 +170,12 @@ app.layout = html.Div([
         html.Div([
             html.Img(id='img8'), html.Figcaption(id='name8'),
             html.Figcaption(id='sim8')
-            ], id='result8', className = 'result8'),
-            ],
-            className = 'box'),
+            ], id='result8', className = 'result8')], className = 'pics')], className = 'box')
+            ], id = "interactive"),
 
 # slider
 
-    html.Div([
-        dcc.Slider(
-        id='threshold-slider',
-        min=-0.0,
-        value = 0.0
-    ),
-    html.Div(
-     id='slider-output-container', className = 'slider'
-    )], id = 'slider')], id = "interactive"),
+
 
     html.Div([
      html.H3('Case Studies:'),
@@ -328,8 +351,209 @@ def update_output(threshold, similarity, names, match):
     dash.dependencies.Output('slider-output-container', 'children'),
     [dash.dependencies.Input('threshold-slider', 'value')])
 def update_output(value):
-    return 'Threshold: You have selected a minimum similarity score to qualify for a match as "{}"'.format(value)
+    return 'You have selected a minimum similarity score to qualify for a match as "{}"'.format(value)
 
+# threshold text
+@app.callback(
+    dash.dependencies.Output('slider-output-container2', 'children'),
+    [Input('threshold-slider', 'value'), Input('current_data_similarity', 'children'), Input('current_data_names', 'children'), Input('current_match_values', 'children')])
+def update_output(threshold, similarity, names, match):
+    num_match = 0
+    for i in range(len(similarity)):
+        if similarity[i] >= threshold:
+            if match[i]==False:
+                num_match +=1
+    if num_match == 1:
+        return 'This threshold results in {} mismatch'.format(num_match)
+    else:
+        return 'This threshold results in {} mismatches'.format(num_match)
+
+#mismatches LeBron James
+@app.callback(
+    dash.dependencies.Output('subject1_mismatches', 'children'),
+    [Input('threshold-slider', 'value')])
+def update_output(threshold):
+    num_match = 0
+    results1 = pd.read_csv('LeBron_James.csv')
+    matches = results1['Match']
+    similarity = results1['Similarity']
+    for i in range(len(similarity)):
+        if similarity[i] >= threshold:
+            if matches[i]==False:
+                num_match +=1
+    if num_match == 1:
+        return '{} mismatch'.format(num_match)
+    else:
+        return '{} mismatches'.format(num_match)
+
+#mismatches Lisa Leslie
+@app.callback(
+    dash.dependencies.Output('subject2_mismatches', 'children'),
+    [Input('threshold-slider', 'value')])
+def update_output(threshold):
+    num_match = 0
+    results1 = pd.read_csv('Lisa_Leslie.csv')
+    matches = results1['Match']
+    similarity = results1['Similarity']
+    for i in range(len(similarity)):
+        if similarity[i] >= threshold:
+            if matches[i]==False:
+                num_match +=1
+    if num_match == 1:
+        return '{} mismatch'.format(num_match)
+    else:
+        return '{} mismatches'.format(num_match)
+
+#mismatches Paris Hilton
+@app.callback(
+    dash.dependencies.Output('subject3_mismatches', 'children'),
+    [Input('threshold-slider', 'value')])
+def update_output(threshold):
+    num_match = 0
+    results1 = pd.read_csv('Paris_Hilton.csv')
+    matches = results1['Match']
+    similarity = results1['Similarity']
+    for i in range(len(similarity)):
+        if similarity[i] >= threshold:
+            if matches[i]==False:
+                num_match +=1
+    if num_match == 1:
+        return '{} mismatch'.format(num_match)
+    else:
+        return '{} mismatches'.format(num_match)
+
+#mismatches Jennifer_Lopez
+@app.callback(
+    dash.dependencies.Output('subject4_mismatches', 'children'),
+    [Input('threshold-slider', 'value')])
+def update_output(threshold):
+    num_match = 0
+    results1 = pd.read_csv('Jennifer_Lopez.csv')
+    matches = results1['Match']
+    similarity = results1['Similarity']
+    for i in range(len(similarity)):
+        if similarity[i] >= threshold:
+            if matches[i]==False:
+                num_match +=1
+    if num_match == 1:
+        return '{} mismatch'.format(num_match)
+    else:
+        return '{} mismatches'.format(num_match)
+
+#mismatches Aaron_Peirsol
+@app.callback(
+    dash.dependencies.Output('subject5_mismatches', 'children'),
+    [Input('threshold-slider', 'value')])
+def update_output(threshold):
+    num_match = 0
+    results1 = pd.read_csv('Aaron_Peirsol.csv')
+    matches = results1['Match']
+    similarity = results1['Similarity']
+    for i in range(len(similarity)):
+        if similarity[i] >= threshold:
+            if matches[i]==False:
+                num_match +=1
+    if num_match == 1:
+        return '{} mismatch'.format(num_match)
+    else:
+        return '{} mismatches'.format(num_match)
+
+#mismatches Jacqueline_Edwards
+@app.callback(
+    dash.dependencies.Output('subject6_mismatches', 'children'),
+    [Input('threshold-slider', 'value')])
+def update_output(threshold):
+    num_match = 0
+    results1 = pd.read_csv('Jacqueline_Edwards.csv')
+    matches = results1['Match']
+    similarity = results1['Similarity']
+    for i in range(len(similarity)):
+        if similarity[i] >= threshold:
+            if matches[i]==False:
+                num_match +=1
+    if num_match == 1:
+        return '{} mismatch'.format(num_match)
+    else:
+        return '{} mismatches'.format(num_match)
+
+#mismatches Kalpana_Chawla
+@app.callback(
+    dash.dependencies.Output('subject7_mismatches', 'children'),
+    [Input('threshold-slider', 'value')])
+def update_output(threshold):
+    num_match = 0
+    results1 = pd.read_csv('Kalpana_Chawla.csv')
+    matches = results1['Match']
+    similarity = results1['Similarity']
+    for i in range(len(similarity)):
+        if similarity[i] >= threshold:
+            if matches[i]==False:
+                num_match +=1
+    if num_match == 1:
+        return '{} mismatch'.format(num_match)
+    else:
+        return '{} mismatches'.format(num_match)
+
+#mismatches Jason_Campbell
+@app.callback(
+    dash.dependencies.Output('subject8_mismatches', 'children'),
+    [Input('threshold-slider', 'value')])
+def update_output(threshold):
+    num_match = 0
+    results1 = pd.read_csv('Jason_Campbell.csv')
+    matches = results1['Match']
+    similarity = results1['Similarity']
+    for i in range(len(similarity)):
+        if similarity[i] >= threshold:
+            if matches[i]==False:
+                num_match +=1
+    if num_match == 1:
+        return '{} mismatch'.format(num_match)
+    else:
+        return '{} mismatches'.format(num_match)
+
+#mismatches Katie_Couric
+@app.callback(
+    dash.dependencies.Output('subject9_mismatches', 'children'),
+    [Input('threshold-slider', 'value')])
+def update_output(threshold):
+    num_match = 0
+    results1 = pd.read_csv('Katie_Couric.csv')
+    matches = results1['Match']
+    similarity = results1['Similarity']
+    for i in range(len(similarity)):
+        if similarity[i] >= threshold:
+            if matches[i]==False:
+                num_match +=1
+    if num_match == 1:
+        return '{} mismatch'.format(num_match)
+    else:
+        return '{} mismatches'.format(num_match)
+
+#mismatches Vicki_Zhao_Wei
+@app.callback(
+    dash.dependencies.Output('subject10_mismatches', 'children'),
+    [Input('threshold-slider', 'value')])
+def update_output(threshold):
+    num_match = 0
+    results1 = pd.read_csv('Vicki_Zhao_Wei.csv')
+    matches = results1['Match']
+    similarity = results1['Similarity']
+    for i in range(len(similarity)):
+        if similarity[i] >= threshold:
+            if matches[i]==False:
+                num_match +=1
+    if num_match == 1:
+        return '{} mismatch'.format(num_match)
+    else:
+        return '{} mismatches'.format(num_match)
+
+#threshhold mismatch title
+@app.callback(
+    dash.dependencies.Output('mismatch_title', 'children'),
+    [Input('threshold-slider', 'value')])
+def update_output(threshold):
+    return 'Mismatches at {} threshold'.format(threshold)
 
 if __name__ == '__main__':
     port = os.environ.get('PORT') or 8035
