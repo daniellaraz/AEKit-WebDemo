@@ -10,14 +10,14 @@ import logging
 
 
 app = dash.Dash(__name__)
-app.title = 'Facial Recognition Demo'
+app.title = 'Face ID Fail'
 server = app.server
 
 
 # introduction text
 app.layout = html.Div([
     html.Div([
-        html.H2("Facial Recognition Demo", id='title', style={'font-family': 'Monaco'}),
+        html.H2("Face ID Fail", id='title', style={'font-family': 'Monaco'}),
         # purpose section
         html.Div([
             html.H3("Purpose: ", id = 'purpose', style = {'font-weight': 'bold', 'font-family': 'Monaco'}),
