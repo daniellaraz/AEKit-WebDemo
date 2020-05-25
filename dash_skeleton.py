@@ -48,7 +48,7 @@ app.layout = html.Div([
              html.Span("True Positive: ", style={"font-weight": "bold"}),
              "occurs when two images, which are indeed of the same person, are correctly labeled as a match. ",
             "In our demo, true positives are outlined in ",
-             html.Span('green.', style={'background-color': '#A6CA45', 'font-weight': 'bold'}),
+             html.Span('green.', style={'background-color': '#00ff00', 'font-weight': 'bold'}),
             ]),
 
         # instructions section
