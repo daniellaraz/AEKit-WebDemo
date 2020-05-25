@@ -222,7 +222,7 @@ def update_output(value):
     #determine max similarity
     similarity = results['Similarity']
 
-    threshold_upper = 1.5
+    threshold_upper = 1
 
     #determine step for threshold
     step = threshold_upper/10
@@ -255,7 +255,7 @@ def update_output(value):
 def update_output(threshold, similarity, names, match):
     if similarity[0] >= threshold:
         if match[0]:
-            return {"border":"10px #A6CA45 solid"}, names[0], str(round(similarity[0], 3))
+            return {"border":"10px #00ff00 solid"}, names[0], str(round(similarity[0], 3))
         else:
             return {"border":"10px white solid"}, names[0], str(round(similarity[0], 3))
     else:
@@ -267,7 +267,7 @@ def update_output(threshold, similarity, names, match):
 def update_output(threshold, similarity, names, match):
     if similarity[1] >= threshold:
         if match[1]:
-            return {"border":"10px #A6CA45 solid"}, names[1], str(round(similarity[1], 3))
+            return {"border":"10px #00ff00 solid"}, names[1], str(round(similarity[1], 3))
         else:
             return {"border":"10px white solid"}, names[1], str(round(similarity[1], 3))
     else:
@@ -279,7 +279,7 @@ def update_output(threshold, similarity, names, match):
 def update_output(threshold, similarity, names, match):
     if similarity[2] >= threshold:
         if match[2]:
-            return {"border":"10px #A6CA45 solid"}, names[2], str(round(similarity[2], 3))
+            return {"border":"10px #00ff00 solid"}, names[2], str(round(similarity[2], 3))
         else:
             return {"border":"10px white solid"}, names[2], str(round(similarity[2], 3))
     else:
@@ -291,7 +291,7 @@ def update_output(threshold, similarity, names, match):
 def update_output(threshold, similarity, names, match):
     if similarity[3] >= threshold:
         if match[3]:
-            return {"border":"10px #A6CA45 solid"}, names[3], str(round(similarity[3], 3))
+            return {"border":"10px #00ff00 solid"}, names[3], str(round(similarity[3], 3))
         else:
             return {"border":"10px white solid"}, names[3], str(round(similarity[3], 3))
     else:
@@ -303,7 +303,7 @@ def update_output(threshold, similarity, names, match):
 def update_output(threshold, similarity, names, match):
     if similarity[4] >= threshold:
         if match[4]:
-            return {"border":"10px #A6CA45 solid"}, names[4], str(round(similarity[4], 3))
+            return {"border":"10px #00ff00 solid"}, names[4], str(round(similarity[4], 3))
         else:
             return {"border":"10px white solid"}, names[4], str(round(similarity[4], 3))
     else:
@@ -316,7 +316,7 @@ def update_output(threshold, similarity, names, match):
 def update_output(threshold, similarity, names, match):
     if similarity[5] >= threshold:
         if match[5]:
-            return {"border":"10px #A6CA45 solid"}, names[5], str(round(similarity[5], 3))
+            return {"border":"10px #00ff00 solid"}, names[5], str(round(similarity[5], 3))
         else:
             return {"border":"10px white solid"}, names[5], str(round(similarity[5], 3))
     else:
@@ -328,7 +328,7 @@ def update_output(threshold, similarity, names, match):
 def update_output(threshold, similarity, names, match):
     if similarity[6] >= threshold:
         if match[6]:
-            return {"border":"10px #A6CA45 solid"}, names[6], str(round(similarity[6], 3))
+            return {"border":"10px #00ff00 solid"}, names[6], str(round(similarity[6], 3))
         else:
             return {"border":"10px white solid"}, names[6], str(round(similarity[6], 3))
     else:
@@ -340,7 +340,7 @@ def update_output(threshold, similarity, names, match):
 def update_output(threshold, similarity, names, match):
     if similarity[7] >= threshold:
         if match[7]:
-            return {"border":"10px #A6CA45 solid"}, names[7], str(round(similarity[7], 3))
+            return {"border":"10px #00ff00 solid"}, names[7], str(round(similarity[7], 3))
         else:
             return {"border":"10px white solid"}, names[7], str(round(similarity[7], 3))
     else:
@@ -377,14 +377,19 @@ def update_output(threshold):
     results1 = pd.read_csv('LeBron_James.csv')
     matches = results1['Match']
     similarity = results1['Similarity']
+    matches_subject = False
     for i in range(len(similarity)):
         if similarity[i] >= threshold:
             if matches[i]==False:
                 num_match +=1
-    if num_match == 1:
-        return '{} mismatch'.format(num_match)
+            else:
+                matches_subject = True
+    num_match_percent = int(num_match/7 * 100)
+    if matches_subject==False and num_match==0:
+        return 'Fails to ID anyone'
     else:
-        return '{} mismatches'.format(num_match)
+        return '{}% mismatches'.format(num_match_percent)
+
 
 #mismatches Lisa Leslie
 @app.callback(
@@ -395,14 +400,18 @@ def update_output(threshold):
     results1 = pd.read_csv('Lisa_Leslie.csv')
     matches = results1['Match']
     similarity = results1['Similarity']
+    matches_subject = False
     for i in range(len(similarity)):
         if similarity[i] >= threshold:
             if matches[i]==False:
                 num_match +=1
-    if num_match == 1:
-        return '{} mismatch'.format(num_match)
+            else:
+                matches_subject = True
+    num_match_percent = int(num_match/7 * 100)
+    if matches_subject==False and num_match==0:
+        return 'Fails to ID anyone'
     else:
-        return '{} mismatches'.format(num_match)
+        return '{}% mismatches'.format(num_match_percent)
 
 #mismatches Paris Hilton
 @app.callback(
@@ -413,14 +422,18 @@ def update_output(threshold):
     results1 = pd.read_csv('Paris_Hilton.csv')
     matches = results1['Match']
     similarity = results1['Similarity']
+    matches_subject = False
     for i in range(len(similarity)):
         if similarity[i] >= threshold:
             if matches[i]==False:
                 num_match +=1
-    if num_match == 1:
-        return '{} mismatch'.format(num_match)
+            else:
+                matches_subject = True
+    num_match_percent = int(num_match/7 * 100)
+    if matches_subject==False and num_match==0:
+        return 'Fails to ID anyone'
     else:
-        return '{} mismatches'.format(num_match)
+        return '{}% mismatches'.format(num_match_percent)
 
 #mismatches Jennifer_Lopez
 @app.callback(
@@ -431,14 +444,18 @@ def update_output(threshold):
     results1 = pd.read_csv('Jennifer_Lopez.csv')
     matches = results1['Match']
     similarity = results1['Similarity']
+    matches_subject = False
     for i in range(len(similarity)):
         if similarity[i] >= threshold:
             if matches[i]==False:
                 num_match +=1
-    if num_match == 1:
-        return '{} mismatch'.format(num_match)
+            else:
+                matches_subject = True
+    num_match_percent = int(num_match/7 * 100)
+    if matches_subject==False and num_match==0:
+        return 'Fails to ID anyone'
     else:
-        return '{} mismatches'.format(num_match)
+        return '{}% mismatches'.format(num_match_percent)
 
 #mismatches Aaron_Peirsol
 @app.callback(
@@ -449,14 +466,18 @@ def update_output(threshold):
     results1 = pd.read_csv('Aaron_Peirsol.csv')
     matches = results1['Match']
     similarity = results1['Similarity']
+    matches_subject = False
     for i in range(len(similarity)):
         if similarity[i] >= threshold:
             if matches[i]==False:
                 num_match +=1
-    if num_match == 1:
-        return '{} mismatch'.format(num_match)
+            else:
+                matches_subject = True
+    num_match_percent = int(num_match/7 * 100)
+    if matches_subject==False and num_match==0:
+        return 'Fails to ID anyone'
     else:
-        return '{} mismatches'.format(num_match)
+        return '{}% mismatches'.format(num_match_percent)
 
 #mismatches Jacqueline_Edwards
 @app.callback(
@@ -467,14 +488,18 @@ def update_output(threshold):
     results1 = pd.read_csv('Jacqueline_Edwards.csv')
     matches = results1['Match']
     similarity = results1['Similarity']
+    matches_subject = False
     for i in range(len(similarity)):
         if similarity[i] >= threshold:
             if matches[i]==False:
                 num_match +=1
-    if num_match == 1:
-        return '{} mismatch'.format(num_match)
+            else:
+                matches_subject = True
+    num_match_percent = int(num_match/7 * 100)
+    if matches_subject==False and num_match==0:
+        return 'Fails to ID anyone'
     else:
-        return '{} mismatches'.format(num_match)
+        return '{}% mismatches'.format(num_match_percent)
 
 #mismatches Kalpana_Chawla
 @app.callback(
@@ -485,14 +510,18 @@ def update_output(threshold):
     results1 = pd.read_csv('Kalpana_Chawla.csv')
     matches = results1['Match']
     similarity = results1['Similarity']
+    matches_subject = False
     for i in range(len(similarity)):
         if similarity[i] >= threshold:
             if matches[i]==False:
                 num_match +=1
-    if num_match == 1:
-        return '{} mismatch'.format(num_match)
+            else:
+                matches_subject = True
+    num_match_percent = int(num_match/7 * 100)
+    if matches_subject==False and num_match==0:
+        return 'Fails to ID anyone'
     else:
-        return '{} mismatches'.format(num_match)
+        return '{}% mismatches'.format(num_match_percent)
 
 #mismatches Jason_Campbell
 @app.callback(
@@ -503,15 +532,18 @@ def update_output(threshold):
     results1 = pd.read_csv('Jason_Campbell.csv')
     matches = results1['Match']
     similarity = results1['Similarity']
+    matches_subject = False
     for i in range(len(similarity)):
         if similarity[i] >= threshold:
             if matches[i]==False:
                 num_match +=1
-    if num_match == 1:
-        return '{} mismatch'.format(num_match)
+            else:
+                matches_subject = True
+    num_match_percent = int(num_match/7 * 100)
+    if matches_subject==False and num_match==0:
+        return 'Fails to ID anyone'
     else:
-        return '{} mismatches'.format(num_match)
-
+        return '{}% mismatches'.format(num_match_percent)
 #mismatches Katie_Couric
 @app.callback(
     dash.dependencies.Output('subject9_mismatches', 'children'),
@@ -521,14 +553,18 @@ def update_output(threshold):
     results1 = pd.read_csv('Katie_Couric.csv')
     matches = results1['Match']
     similarity = results1['Similarity']
+    matches_subject = False
     for i in range(len(similarity)):
         if similarity[i] >= threshold:
             if matches[i]==False:
                 num_match +=1
-    if num_match == 1:
-        return '{} mismatch'.format(num_match)
+            else:
+                matches_subject = True
+    num_match_percent = int(num_match/7 * 100)
+    if matches_subject==False and num_match==0:
+        return 'Fails to ID anyone'
     else:
-        return '{} mismatches'.format(num_match)
+        return '{}% mismatches'.format(num_match_percent)
 
 #mismatches Vicki_Zhao_Wei
 @app.callback(
@@ -539,14 +575,18 @@ def update_output(threshold):
     results1 = pd.read_csv('Vicki_Zhao_Wei.csv')
     matches = results1['Match']
     similarity = results1['Similarity']
+    matches_subject = False
     for i in range(len(similarity)):
         if similarity[i] >= threshold:
             if matches[i]==False:
                 num_match +=1
-    if num_match == 1:
-        return '{} mismatch'.format(num_match)
+            else:
+                matches_subject = True
+    num_match_percent = int(num_match/7 * 100)
+    if matches_subject==False and num_match==0:
+        return 'Fails to ID anyone'
     else:
-        return '{} mismatches'.format(num_match)
+        return '{}% mismatches'.format(num_match_percent)
 
 #threshhold mismatch title
 @app.callback(

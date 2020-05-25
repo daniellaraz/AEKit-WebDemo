@@ -41,7 +41,8 @@
 }
 
  #interactive {
-     background-color: #ffffff;
+     background-color: #000000;
+     color: #00ff00;
      border-style: solid;
  }
 
