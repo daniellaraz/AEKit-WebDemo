@@ -257,9 +257,9 @@ def update_output(threshold, similarity, names, match):
         if match[0]:
             return {"border":"10px #00ff00 solid"}, names[0], str(round(similarity[0], 3))
         else:
-            return {"border":"10px white solid"}, names[0], str(round(similarity[0], 3))
+            return {"border":"10px black solid"}, names[0], str(round(similarity[0], 3))
     else:
-        return {"border":"10px white solid", "opacity": "0.2"}, names[0], str(round(similarity[0], 3))
+        return {"border":"10px black solid", "opacity": "0.2"}, names[0], str(round(similarity[0], 3))
 
 #threshold image 2
 @app.callback([Output('img2', 'style'),Output('name2', 'children'), Output('sim2', 'children')],
@@ -269,9 +269,9 @@ def update_output(threshold, similarity, names, match):
         if match[1]:
             return {"border":"10px #00ff00 solid"}, names[1], str(round(similarity[1], 3))
         else:
-            return {"border":"10px white solid"}, names[1], str(round(similarity[1], 3))
+            return {"border":"10px black solid"}, names[1], str(round(similarity[1], 3))
     else:
-        return {"border":"10px white solid", "opacity": "0.2"}, names[1], str(round(similarity[1], 3))
+        return {"border":"10px black solid", "opacity": "0.2"}, names[1], str(round(similarity[1], 3))
 
 #threshold image 3
 @app.callback([Output('img3', 'style'),Output('name3', 'children'), Output('sim3', 'children')],
@@ -281,9 +281,9 @@ def update_output(threshold, similarity, names, match):
         if match[2]:
             return {"border":"10px #00ff00 solid"}, names[2], str(round(similarity[2], 3))
         else:
-            return {"border":"10px white solid"}, names[2], str(round(similarity[2], 3))
+            return {"border":"10px black solid"}, names[2], str(round(similarity[2], 3))
     else:
-        return {"border":"10px white solid", "opacity": "0.2"}, names[2], str(round(similarity[2], 3))
+        return {"border":"10px black solid", "opacity": "0.2"}, names[2], str(round(similarity[2], 3))
 
 #threshold image 4
 @app.callback([Output('img4', 'style'),Output('name4', 'children'), Output('sim4', 'children')],
@@ -293,9 +293,9 @@ def update_output(threshold, similarity, names, match):
         if match[3]:
             return {"border":"10px #00ff00 solid"}, names[3], str(round(similarity[3], 3))
         else:
-            return {"border":"10px white solid"}, names[3], str(round(similarity[3], 3))
+            return {"border":"10px black solid"}, names[3], str(round(similarity[3], 3))
     else:
-        return {"border":"10px white solid", "opacity": "0.2"}, names[3], str(round(similarity[3], 3))
+        return {"border":"10px black solid", "opacity": "0.2"}, names[3], str(round(similarity[3], 3))
 
 #threshold image 5
 @app.callback([Output('img5', 'style'),Output('name5', 'children'), Output('sim5', 'children')],
@@ -305,9 +305,9 @@ def update_output(threshold, similarity, names, match):
         if match[4]:
             return {"border":"10px #00ff00 solid"}, names[4], str(round(similarity[4], 3))
         else:
-            return {"border":"10px white solid"}, names[4], str(round(similarity[4], 3))
+            return {"border":"10px black solid"}, names[4], str(round(similarity[4], 3))
     else:
-        return {"border":"10px white solid", "opacity": "0.2"}, names[4], str(round(similarity[4], 3))
+        return {"border":"10px black solid", "opacity": "0.2"}, names[4], str(round(similarity[4], 3))
 
 #threshold image 6
 @app.callback([Output('img6', 'style'),Output('name6', 'children'), Output('sim6','children')],
@@ -318,9 +318,9 @@ def update_output(threshold, similarity, names, match):
         if match[5]:
             return {"border":"10px #00ff00 solid"}, names[5], str(round(similarity[5], 3))
         else:
-            return {"border":"10px white solid"}, names[5], str(round(similarity[5], 3))
+            return {"border":"10px black solid"}, names[5], str(round(similarity[5], 3))
     else:
-        return {"border":"10px white solid", "opacity": "0.2"}, names[5], str(round(similarity[5], 3))
+        return {"border":"10px black solid", "opacity": "0.2"}, names[5], str(round(similarity[5], 3))
 
 #threshold image 7
 @app.callback([Output('img7', 'style'),Output('name7', 'children'), Output('sim7', 'children')],
@@ -330,9 +330,9 @@ def update_output(threshold, similarity, names, match):
         if match[6]:
             return {"border":"10px #00ff00 solid"}, names[6], str(round(similarity[6], 3))
         else:
-            return {"border":"10px white solid"}, names[6], str(round(similarity[6], 3))
+            return {"border":"10px black solid"}, names[6], str(round(similarity[6], 3))
     else:
-        return {"border":"10px white solid", "opacity": "0.2"}, names[6], str(round(similarity[6], 3))
+        return {"border":"10px black solid", "opacity": "0.2"}, names[6], str(round(similarity[6], 3))
 
 #threshold image 8
 @app.callback([Output('img8', 'style'),Output('name8', 'children'), Output('sim8', 'children')],
@@ -342,7 +342,7 @@ def update_output(threshold, similarity, names, match):
         if match[7]:
             return {"border":"10px #00ff00 solid"}, names[7], str(round(similarity[7], 3))
         else:
-            return {"border":"10px white solid"}, names[7], str(round(similarity[7], 3))
+            return {"border":"10px black solid"}, names[7], str(round(similarity[7], 3))
     else:
         return {"border":"10px black solid", "opacity": "0.2"}, names[7], str(round(similarity[7], 3))
 
