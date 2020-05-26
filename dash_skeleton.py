@@ -21,34 +21,42 @@ app.layout = html.Div([
         # purpose section
         html.Div([
             html.H3("Purpose: ", id = 'purpose', style = {'font-weight': 'bold', 'font-family': 'Monaco'}),
-            html.P("The goal of this demo is to highlight some of the harms of facial recognition systems. Though there are many issues with facial recognition software, this tool demonstrates two in particular. "),
+            html.P("The goal of this demo is to highlight some of the risks of facial recognition systems. Though there are many concerns about the use of facial recognition software, this tool demonstrates two in particular. Facial recognition systems attempt to match different images of faces. The goal of a system is to determine if the face in Image A belongs to the same person as in Image B."),
             html.Span("First, ", style={'font-weight': 'bold'}),
-            "we illustrate how facial recognition software relies on thresholds, which are often arbitrarily set, to determine whether two faces in a photo are a match. ",
-            "At its simplest, two images are compared and given a numerical value that represents on a continuous scale how similar the images are. ",
-            "A cut-off value is selected, meaning that any similarity score greater than that cut-off value will be considered a match, and anything below or equal to that value is not considered a match. ",
-            "But, what decides this cut-off value? ",
+            "First, we illustrate how facial recognition software relies on “threshold” settings, which is a configuration that affects system accuracy. ",
+            "A higher threshold setting will more often fail to make a positive match when it would be accurate to do so. ",
+            "A low threshold will more often report a “false positive” match on two images that are not of the same person. ",
+            "Threshold settings are configurable by users. ",
+            "The default settings for the two most popular facial recognition systems are set fairly low.",
                 ]),
         html.Div([
              html.Span("Second, ", style={"font-weight": "bold"}),
-             " we demonstrate, as has been shown in academic and policy literature, that facial recognition software misidentifies people of color, specifically women of color, more often than it does white people. Yet, facial recognition software is frequently used to police black and brown communities - the very people the software identifies most poorly.",
+             " we demonstrate, as has been shown in academic and policy literature, that facial recognition software misidentifies people of color, especially women of color more often than it does white people. ",
+             "Systems are more likely to produce “false positives” on darker skin toned faces. ", 
+             "When used by police officers, this raises the possibility of confrontations between police officers and members black and brown communities. ",
+             "Because of concerns about the overpolicing of these communities and unnecessary police violence, facial recognition use by police raises the risk of further harms to members of the public who already face disparate treatment. ",  
             ]),
         # terms to know section
         html.Div([
             html.H3("Terms to Know: ", id = "terms", style = {'font-weight': 'bold', 'font-family': 'Monaco'}),
             html.P("The following are some helpful terms for better understanding this demo."),
             html.Span("Similarity Score: ", style={'font-weight': 'bold'}),
-            " is a numerical value that represents how similar two faces are. Facial recognition software convert images into mathematical representations that can then be used to compare various faces and find potential matches. For purposes of this demo, the greater the similarity score, the more similar two faces are.",
+            " is a numerical value that represents how similar two faces are. Facial recognition software converts images into mathematical representations used to compare various faces and find potential matches. For purposes of this demo, the greater the similarity score, the more similar two faces are. A threshold setting sets the cut-off for the similarity score that is reported as a match.",
             "    ",
                 ]),
         html.Div([
              html.Span("False Positive: ", style={"font-weight": "bold"}),
-             "occurs when images that are not of the same person are incorrectly labeled as a match because their similarity score exceeded the minimum required to be considered a match.",
+             "occurs when images that are not of the same person are incorrectly labeled as a match because their similarity score exceeded the minimum threshold required to be considered a match.",
             ]),
         html.Div([
              html.Span("True Positive: ", style={"font-weight": "bold"}),
              "occurs when two images, which are indeed of the same person, are correctly labeled as a match. ",
             "In our demo, true positives are outlined in ",
              html.Span('green.', style={'background-color': '#00ff00', 'font-weight': 'bold'}),
+            ]),
+        html.Div([
+            html.Span("False Negative: ", style={"font-weight": "bold"}),
+            "occurs when images that are of the same person are incorrectly labeled as not matching.",
             ]),
 
         # instructions section
@@ -598,5 +606,5 @@ def update_output(threshold):
 if __name__ == '__main__':
     port = os.environ.get('PORT') or 8035
     debug = 'DYNO' not in os.environ
-   # app.run_server(port=port, debug=debug)
-    app.run_server(port=port)
+    app.run_server(port=port, debug=debug)
+   # app.run_server(port=port)
