@@ -18,6 +18,7 @@ server = app.server
 app.layout = html.Div([
     html.Div([
         html.H2("Face ID Fail", id='title', style={'font-family': 'Monaco'}),
+        html.H4("***This beta version works best in Chrome***", style={'font-family': 'Monaco'}),
         # purpose section
         html.Div([
             html.H3("Purpose: ", id = 'purpose', style = {'font-weight': 'bold', 'font-family': 'Monaco'}),
@@ -32,9 +33,9 @@ app.layout = html.Div([
         html.Div([
              html.Span("Second, ", style={"font-weight": "bold"}),
              " we demonstrate, as has been shown in academic and policy literature, that facial recognition software misidentifies people of color, especially women of color more often than it does white people. ",
-             "Systems are more likely to produce “false positives” on darker skin toned faces. ", 
+             "Systems are more likely to produce “false positives” on darker skin toned faces. ",
              "When used by police officers, this raises the possibility of confrontations between police officers and members black and brown communities. ",
-             "Because of concerns about the overpolicing of these communities and unnecessary police violence, facial recognition use by police raises the risk of further harms to members of the public who already face disparate treatment. ",  
+             "Because of concerns about the overpolicing of these communities and unnecessary police violence, facial recognition use by police raises the risk of further harms to members of the public who already face disparate treatment. ",
             ]),
         # terms to know section
         html.Div([
