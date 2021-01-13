@@ -572,6 +572,8 @@ def update_output(threshold):
     num_match_percent = int(num_match/7 * 100)
     if matches_subject==False and num_match==0:
         return 'Fails to ID anyone'
+    elif num_match_percent==0:
+        return 'Successfully Matched'
     else:
         return '{}% mismatches'.format(num_match_percent)
 
