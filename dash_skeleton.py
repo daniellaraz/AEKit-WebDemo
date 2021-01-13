@@ -109,16 +109,16 @@ app.layout = html.Div([
     id = 'subject_options'
 ), html.Div(id="mismatch_title", className="mismatch_title"),
 html.Div([
-html.Div(id='subject1_mismatches', className = 'mismatches1'),
-html.Div(id='subject2_mismatches', className = 'mismatches2'),
-html.Div(id='subject3_mismatches', className = 'mismatches3'),
-html.Div(id='subject4_mismatches', className = 'mismatches4'),
-html.Div(id='subject5_mismatches', className = 'mismatches5'),
-html.Div(id='subject6_mismatches', className = 'mismatches6'),
-html.Div(id='subject7_mismatches', className = 'mismatches7'),
-html.Div(id='subject8_mismatches', className = 'mismatches8'),
-html.Div(id='subject9_mismatches', className = 'mismatches9'),
-html.Div(id='subject10_mismatches', className = 'mismatches10')
+html.Div(id='subject1_mismatches', className = 'mismatches1', style={'marginBottom': '.14em'}),
+html.Div(id='subject2_mismatches', className = 'mismatches2', style={'marginBottom': '.14em'}),
+html.Div(id='subject3_mismatches', className = 'mismatches3', style={'marginBottom': '.14em'}),
+html.Div(id='subject4_mismatches', className = 'mismatches4', style={'marginBottom': '.14em'}),
+html.Div(id='subject5_mismatches', className = 'mismatches5', style={'marginBottom': '.14em'}),
+html.Div(id='subject6_mismatches', className = 'mismatches6', style={'marginBottom': '.14em'}),
+html.Div(id='subject7_mismatches', className = 'mismatches7', style={'marginBottom': '.14em'}),
+html.Div(id='subject8_mismatches', className = 'mismatches8', style={'marginBottom': '.14em'}),
+html.Div(id='subject9_mismatches', className = 'mismatches9', style={'marginBottom': '.14em'}),
+html.Div(id='subject10_mismatches', className = 'mismatches10', style={'marginBottom': '.14em'})
 ], id="mismatches")],
 id='subject'),
 
@@ -231,10 +231,10 @@ def update_output(value):
     #determine max similarity
     similarity = results['Similarity']
 
-    threshold_upper = 1
+    threshold_upper = 1.4
 
     #determine step for threshold
-    step = threshold_upper/10
+    step = .1
 
     #download match booleans
     matches = results['Match']
@@ -242,7 +242,7 @@ def update_output(value):
     #create mark dictionary for slider
     steps = {}
     c=0
-    for i in range(11):
+    for i in range(15):
         if round((c+step*i), 2) == 0.00:
             steps[0] = str(round(c+(step*i), 1))
         elif round((c+step*i), 2) == 1.00:
