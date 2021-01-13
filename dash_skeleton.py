@@ -24,7 +24,7 @@ app.layout = html.Div([
             html.H3("Purpose: ", id = 'purpose', style = {'font-weight': 'bold', 'font-family': 'Monaco'}),
             html.P("The goal of this demo is to highlight some of the risks of facial recognition systems. Though there are many concerns about the use of facial recognition software, this tool demonstrates two in particular. Facial recognition systems attempt to match different images of faces. The goal of a system is to determine if the face in Image A belongs to the same person as in Image B."),
             html.Span("First, ", style={'font-weight': 'bold'}),
-            "First, we illustrate how facial recognition software relies on “threshold” settings, which is a configuration that affects system accuracy. ",
+            " we illustrate how facial recognition software relies on “threshold” settings, which is a configuration that affects system accuracy. ",
             "A higher threshold setting will more often fail to make a positive match when it would be accurate to do so. ",
             "A low threshold will more often report a “false positive” match on two images that are not of the same person. ",
             "Threshold settings are configurable by users. ",
