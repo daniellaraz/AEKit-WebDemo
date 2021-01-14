@@ -395,9 +395,9 @@ def update_output(threshold):
                 matches_subject = True
     num_match_percent = int(num_match/7 * 100)
     if matches_subject==False and num_match==0:
-        return 'Failed to ID anyone'
+        return 'Fails to ID anyone'
     elif num_match_percent==0:
-        return 'Correctly Matched'
+        return 'Correctly Matches'
     else:
         return '{}% mismatches'.format(num_match_percent)
 
@@ -420,9 +420,9 @@ def update_output(threshold):
                 matches_subject = True
     num_match_percent = int(num_match/7 * 100)
     if matches_subject==False and num_match==0:
-        return 'Failed to ID anyone'
+        return 'Fails to ID anyone'
     elif num_match_percent==0:
-        return 'Correctly Matched'
+        return 'Correctly Matches'
     else:
         return '{}% mismatches'.format(num_match_percent)
 
@@ -444,9 +444,9 @@ def update_output(threshold):
                 matches_subject = True
     num_match_percent = int(num_match/7 * 100)
     if matches_subject==False and num_match==0:
-        return 'Failed to ID anyone'
+        return 'Fails to ID anyone'
     elif num_match_percent==0:
-        return 'Correctly Matched'
+        return 'Correctly Matches'
     else:
         return '{}% mismatches'.format(num_match_percent)
 
@@ -468,9 +468,9 @@ def update_output(threshold):
                 matches_subject = True
     num_match_percent = int(num_match/7 * 100)
     if matches_subject==False and num_match==0:
-        return 'Failed to ID anyone'
+        return 'Fails to ID anyone'
     elif num_match_percent==0:
-        return 'Correctly Matched'
+        return 'Correctly Matches'
     else:
         return '{}% mismatches'.format(num_match_percent)
 
@@ -492,9 +492,9 @@ def update_output(threshold):
                 matches_subject = True
     num_match_percent = int(num_match/7 * 100)
     if matches_subject==False and num_match==0:
-        return 'Failed to ID anyone'
+        return 'Fails to ID anyone'
     elif num_match_percent==0:
-        return 'Correctly Matched'
+        return 'Correctly Matches'
     else:
         return '{}% mismatches'.format(num_match_percent)
 
@@ -516,9 +516,9 @@ def update_output(threshold):
                 matches_subject = True
     num_match_percent = int(num_match/7 * 100)
     if matches_subject==False and num_match==0:
-        return 'Failed to ID anyone'
+        return 'Fails to ID anyone'
     elif num_match_percent==0:
-        return 'Correctly Matched'
+        return 'Correctly Matches'
     else:
         return '{}% mismatches'.format(num_match_percent)
 
@@ -540,9 +540,9 @@ def update_output(threshold):
                 matches_subject = True
     num_match_percent = int(num_match/7 * 100)
     if matches_subject==False and num_match==0:
-        return 'Failed to ID anyone'
+        return 'Fails to ID anyone'
     elif num_match_percent==0:
-        return 'Correctly Matched'
+        return 'Correctly Matches'
     else:
         return '{}% mismatches'.format(num_match_percent)
 
@@ -564,9 +564,9 @@ def update_output(threshold):
                 matches_subject = True
     num_match_percent = int(num_match/7 * 100)
     if matches_subject==False and num_match==0:
-        return 'Failed to ID anyone'
+        return 'Fails to ID anyone'
     elif num_match_percent==0:
-        return 'Correctly Matched'
+        return 'Correctly Matches'
     else:
         return '{}% mismatches'.format(num_match_percent)
     
@@ -588,9 +588,9 @@ def update_output(threshold):
                 matches_subject = True
     num_match_percent = int(num_match/7 * 100)
     if matches_subject==False and num_match==0:
-        return 'Failed to ID anyone'
+        return 'Fails to ID anyone'
     elif num_match_percent==0:
-        return 'Correctly Matched'
+        return 'Correctly Matches'
     else:
         return '{}% mismatches'.format(num_match_percent)
 
@@ -612,9 +612,9 @@ def update_output(threshold):
                 matches_subject = True
     num_match_percent = int(num_match/7 * 100)
     if matches_subject==False and num_match==0:
-        return 'Failed to ID anyone'
+        return 'Fails to ID anyone'
     elif num_match_percent==0:
-        return 'Correctly Matched'
+        return 'Correctly Matches'
     else:
         return '{}% mismatches'.format(num_match_percent)
 
