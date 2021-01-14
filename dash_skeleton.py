@@ -113,7 +113,7 @@ html.Div(id='subject1_mismatches', className = 'mismatches1', style={'marginBott
 html.Div(id='subject2_mismatches', className = 'mismatches2', style={'marginBottom': '.14em'}),
 html.Div(id='subject3_mismatches', className = 'mismatches3', style={'marginBottom': '.14em'}),
 html.Div(id='subject4_mismatches', className = 'mismatches4', style={'marginBottom': '.14em'}),
-html.Div(id='subject5_mismatches', className = 'mismatches5', style={'marginBottom': '.14em'}),
+html.Div(id='subject5_mismatches', className = 'mismatches5', style={'marginBottom': '.10em'}),
 html.Div(id='subject6_mismatches', className = 'mismatches6', style={'marginBottom': '.14em'}),
 html.Div(id='subject7_mismatches', className = 'mismatches7', style={'marginBottom': '.14em'}),
 html.Div(id='subject8_mismatches', className = 'mismatches8', style={'marginBottom': '.14em'}),
@@ -485,6 +485,8 @@ def update_output(threshold):
     num_match_percent = int(num_match/7 * 100)
     if matches_subject==False and num_match==0:
         return 'Fails to ID anyone'
+    elif num_match==0:
+        return 'Correctly Matched"
     else:
         return '{}% mismatches'.format(num_match_percent)
 
