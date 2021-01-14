@@ -109,16 +109,16 @@ app.layout = html.Div([
     id = 'subject_options'
 ), html.Div(id="mismatch_title", className="mismatch_title"),
 html.Div([
-html.Div(id='subject1_mismatches', className = 'mismatches1', style={'marginBottom': '.13em'}),
-html.Div(id='subject2_mismatches', className = 'mismatches2', style={'marginBottom': '.13em'}),
-html.Div(id='subject3_mismatches', className = 'mismatches3', style={'marginBottom': '.13em'}),
-html.Div(id='subject4_mismatches', className = 'mismatches4', style={'marginBottom': '.13em'}),
-html.Div(id='subject5_mismatches', className = 'mismatches5', style={'marginBottom': '.13em'}),
-html.Div(id='subject6_mismatches', className = 'mismatches6', style={'marginBottom': '.13em'}),
-html.Div(id='subject7_mismatches', className = 'mismatches7', style={'marginBottom': '.13em'}),
-html.Div(id='subject8_mismatches', className = 'mismatches8', style={'marginBottom': '.13em'}),
-html.Div(id='subject9_mismatches', className = 'mismatches9', style={'marginBottom': '.13em'}),
-html.Div(id='subject10_mismatches', className = 'mismatches10', style={'marginBottom': '.13em'})
+html.Div(id='subject1_mismatches', className = 'mismatches1', style={'marginBottom': '.14em'}),
+html.Div(id='subject2_mismatches', className = 'mismatches2', style={'marginBottom': '.14em'}),
+html.Div(id='subject3_mismatches', className = 'mismatches3', style={'marginBottom': '.14em'}),
+html.Div(id='subject4_mismatches', className = 'mismatches4', style={'marginBottom': '.14em'}),
+html.Div(id='subject5_mismatches', className = 'mismatches5', style={'marginBottom': '.14em'}),
+html.Div(id='subject6_mismatches', className = 'mismatches6', style={'marginBottom': '.14em'}),
+html.Div(id='subject7_mismatches', className = 'mismatches7', style={'marginBottom': '.14em'}),
+html.Div(id='subject8_mismatches', className = 'mismatches8', style={'marginBottom': '.14em'}),
+html.Div(id='subject9_mismatches', className = 'mismatches9', style={'marginBottom': '.14em'}),
+html.Div(id='subject10_mismatches', className = 'mismatches10', style={'marginBottom': '.14em'})
 ], id="mismatches")],
 id='subject'),
 
