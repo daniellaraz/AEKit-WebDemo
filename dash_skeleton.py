@@ -21,8 +21,8 @@ app.layout = html.Div([
         html.H4("***This beta version works best in Chrome***", style={'font-family': 'Monaco'}),
         # purpose section
         html.Div([
-            html.H3("Purpose: ", id = 'purpose', style = {'font-weight': 'bold', 'font-family': 'Monaco'}),
-            html.P("The goal of this demo is to highlight some of the risks of facial recognition systems. Though there are many concerns about the use of facial recognition software, this tool demonstrates two in particular. Facial recognition systems attempt to match different images of faces. The goal of a system is to determine if the face in Image A belongs to the same person as in Image B."),
+            html.H3("Goal: ", id = 'purpose', style = {'font-weight': 'bold', 'font-family': 'Monaco'}),
+            html.P("The goal of this demo is to show you the risks of face recognition software. In the most basic terms, face recognition software attempts to match different images of faces. When images are run through face recognition software they are given a numerical value. The goal is to determine if the face in, say, Photo A belongs to the same person as in Photo B. The similarity of these photos, and whether they show the same face, is determined by the numerical value the face recognition software assigns each photo. You may have seen such software in crime and action TV shows or movies (think, CSI, Jason Bourne, Minority Report, or the Mission Impossible franchise). In these thrillers this software is presented as error-free and foolproof. But, is it actually?"),
             html.Span("First, ", style={'font-weight': 'bold'}),
             " we illustrate how facial recognition software relies on “threshold” settings, which is a configuration that affects system accuracy. ",
             "A higher threshold setting will more often fail to make a positive match when it would be accurate to do so. ",
