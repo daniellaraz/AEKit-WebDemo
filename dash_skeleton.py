@@ -34,7 +34,7 @@ app.layout = html.Div([
             "The threshold setting is a cutoff point the user of the software selects — any images whose numerical value is below this cutoff are discarded and not considered matches. ",
             "Any image above this threshold, or cutoff, is considered a potential match. ",
             "Therefore, threshold settings affect the software’s accuracy, and both the selected threshold and ultimately the matches produced are judgement calls made by humans.",
-            "In fact, the default threshold settings for the two most popular facial recognition systems are set fairly low (source?). ",
+            "In fact, the default threshold settings for the two most popular facial recognition systems are set fairly low (source?).",
                 ]),
         html.Div([
              html.Span("Second, ", style={"font-weight": "bold"}),
@@ -85,8 +85,10 @@ app.layout = html.Div([
         html.Div([
             html.H3("Questions to Consider: ", id = "questions", style = {'font-weight': 'bold', 'font-family': 'Monaco'}),
             html.P("While you use this demo, consider the following questions."),
-            html.P("1. Compare similarity scores and thresholds across 'Current Subjects' of different races and ethnicities. What is the lowest threshold at which the software correctly identifies Aaron Piersol's face among the potential matches? What is the lowest threshold at which the software correctly identifies LeBron James' face among the potential matches? Finally, what is the lowest threshold at which the software correctly identifies Jacqueline Edwards' face among the potential matches?"),
-            html.P("2. Consider whether making facial recognition software more accurate for people of color would actually make the technology safe to use. More accurate facial recognition software that better identifies faces could contribute to policing and surveillance of communities of color, undocumented immigrants, and others. Does such a software have a place in our society?")
+            html.P("1a. What is the lowest threshold at which the software correctly identifies Aaron Piersol's face?"),
+            html.P("1b. What is the lowest threshold at which the software correctly identifies LeBron James' face?"), 
+            html.P("1c. What is the lowest threshold at which the software correctly identifies Jacqueline Edwards' face?"),
+            html.P("2. Consider whether making facial recognition software more accurate for people of color would actually make the technology safe to use. More accurate facial recognition software could help policing and surveillance among communities of color, undocumented immigrants, and others. Do you think more accurate software has a place in our society?")
                 ]),
 
 
