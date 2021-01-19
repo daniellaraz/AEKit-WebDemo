@@ -77,6 +77,7 @@ app.layout = html.Div([
                 ]),
         html.P("3. In the 'Threshold' section you'll see a slider. Move the slider by clicking on the numbered intervals. This changes the minimum similarity score required in order to be considered a match. As you move the slider, you'll see some matches fade away as their similarity score does not meet the minimum threshold you've set. "),
         html.P("4. Under 'Current Subject', you'll see a list of other options. Click through the diverse list of celebrities, playing around with the threshold slider as well. Take note of how effecitvely, or ineffectively, the software identifies true matches. "),
+        html.P("5. Compare similarity scores and thresholds across 'Current Subjects' of different races, ethnicities, and genders. "),
             ]),
 
 
