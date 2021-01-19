@@ -21,14 +21,20 @@ app.layout = html.Div([
         html.H4("***This beta version works best in Chrome***", style={'font-family': 'Monaco'}),
         # purpose section
         html.Div([
-            html.H3("Goal: ", id = 'purpose', style = {'font-weight': 'bold', 'font-family': 'Monaco'}),
+            html.H3("Purpose: ", id = 'purpose', style = {'font-weight': 'bold', 'font-family': 'Monaco'}),
             html.P("The goal of this demo is to show you the risks of face recognition software. In the most basic terms, face recognition software attempts to match different images of faces. When images are run through face recognition software they are given a numerical value. The goal is to determine if the face in, say, Photo A belongs to the same person as in Photo B. The similarity of these photos, and whether they show the same face, is determined by the numerical value the face recognition software assigns each photo. You may have seen such software in crime and action TV shows or movies (think, CSI, Jason Bourne, Minority Report, or the Mission Impossible franchise). In these thrillers this software is presented as error-free and foolproof. But, is it actually?"),
+        ]),
+        # main points section
+        html.Div([
+            html.H3("Main Points: ", id = 'mainpoints', style = {'font-weight': 'bold', 'font-family': 'Monaco'}),
+            html.P("Though there are many concerns about the use of face recognition software, this demo will show two weaknesses in particular. "),
             html.Span("First, ", style={'font-weight': 'bold'}),
-            " we illustrate how facial recognition software relies on “threshold” settings, which is a configuration that affects system accuracy. ",
-            "A higher threshold setting will more often fail to make a positive match when it would be accurate to do so. ",
-            "A low threshold will more often report a “false positive” match on two images that are not of the same person. ",
-            "Threshold settings are configurable by users. ",
-            "The default settings for the two most popular facial recognition systems are set fairly low.",
+            " the demo will show you how face recognition software relies on “threshold” settings. ",
+            "The numerical value face recognition software assigns each image is compared to the values assigned to other images. ",
+            "The threshold setting is a cutoff point the user of the software selects — any images whose numerical value is below this cutoff are discarded and not considered matches. ",
+            "Any image above this threshold, or cutoff, is considered a potential match. ",
+            "Therefore, threshold settings affect the software’s accuracy, and both the selected threshold and ultimately the matches produced are judgement calls made by humans.",
+            "In fact, the default threshold settings for the two most popular facial recognition systems are set fairly low (source?). ",
                 ]),
         html.Div([
              html.Span("Second, ", style={"font-weight": "bold"}),
