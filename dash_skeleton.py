@@ -19,35 +19,49 @@ app.layout = html.Div([
     html.Div([
         html.H2("Face ID Fail", id='title', style={'font-family': 'Monaco'}),
         html.H4("***This beta version works best in Chrome***", style={'font-family': 'Monaco'}),
-        # purpose section
+        # goal section
         html.Div([
-            html.H3("Purpose: ", id = 'purpose', style = {'font-weight': 'bold', 'font-family': 'Monaco'}),
-            html.P("The goal of this demo is to highlight some of the risks of facial recognition systems. Though there are many concerns about the use of facial recognition software, this tool demonstrates two in particular. Facial recognition systems attempt to match different images of faces. The goal of a system is to determine if the face in Image A belongs to the same person as in Image B."),
+            html.H3("Goal: ", id = 'purpose', style = {'font-weight': 'bold', 'font-family': 'Monaco'}),
+            html.P("The goal of this demo is to show you the risks of face recognition software. In the most basic terms, face recognition software attempts to match different images of faces. When images are run through face recognition software they are given a numerical value. The goal is to determine if the face in, say, Photo A belongs to the same person as in Photo B. The similarity of these photos, and whether they show the same face, is determined by the numerical value the face recognition software assigns each photo. You may have seen such software in crime and action TV shows or movies (think, CSI, Jason Bourne, Minority Report, or the Mission Impossible franchise). In these thrillers this software is presented as error-free and foolproof. But, is it actually?"),
+        ]),
+        # main points section
+        html.Div([
+            html.H3("Main Points: ", id = 'mainpoints', style = {'font-weight': 'bold', 'font-family': 'Monaco'}),
+            html.P("Though there are many concerns about the use of face recognition software, this demo will show two weaknesses in particular."),
             html.Span("First, ", style={'font-weight': 'bold'}),
-            " we illustrate how facial recognition software relies on “threshold” settings, which is a configuration that affects system accuracy. ",
-            "A higher threshold setting will more often fail to make a positive match when it would be accurate to do so. ",
-            "A low threshold will more often report a “false positive” match on two images that are not of the same person. ",
-            "Threshold settings are configurable by users. ",
-            "The default settings for the two most popular facial recognition systems are set fairly low.",
-                ]),
+            "the demo will show you how face recognition software relies on “threshold” settings. The numerical value face recognition software assigns each image is compared to the values assigned to other images. ",
+            "The threshold setting is a cutoff point the user of the software selects — any images whose numerical value is below this cutoff are discarded and not considered matches. ",
+            "Any image above this threshold, or cutoff, is considered a potential match. ",
+            "Therefore, threshold settings affect the software’s accuracy, and both the selected threshold and ultimately the matches produced are judgement calls made by humans. ",
+            "In fact, the default threshold settings for the two most popular facial recognition systems are set fairly low (source?). ",  
+        ]),
         html.Div([
              html.Span("Second, ", style={"font-weight": "bold"}),
-             " we demonstrate, as has been shown in academic and policy literature, that facial recognition software misidentifies people of color, especially women of color more often than it does white people. ",
-             "Systems are more likely to produce “false positives” on darker skin toned faces. ",
-             "When used by police officers, this raises the possibility of confrontations between police officers and members black and brown communities. ",
-             "Because of concerns about the overpolicing of these communities and unnecessary police violence, facial recognition use by police raises the risk of further harms to members of the public who already face disparate treatment. ",
+             " this demo shows that face recognition software misidentifies women and people of color, especially women of color, more often than white men. ",
+             "This has been shown at length in academic and policy literature. ",
+             "For darker skin toned faces especially, face recognition software is more likely to produce false positives, meaning the software shows two faces to be a match, though they are not.  ",
             ]),
+        # why does this matter section
+        html.Div([
+            html.H3("Why does this matter? ", id = "terms", style = {'font-weight': 'bold', 'font-family': 'Monaco'}),
+            html.P("This matters because face recognition software is used by some police departments and various government agencies, as well as corporations. Given that the communities most likely to be misidentified by face recognition software are also those on whom police departments are most likely to use this software, this raises concerns of unnecessary police violence, arrests, incarceration, and other harms. "),
+        ]),        
+        
         # terms to know section
         html.Div([
             html.H3("Terms to Know: ", id = "terms", style = {'font-weight': 'bold', 'font-family': 'Monaco'}),
             html.P("The following are some helpful terms for better understanding this demo."),
             html.Span("Similarity Score: ", style={'font-weight': 'bold'}),
-            " is a numerical value that represents how similar two faces are. Facial recognition software converts images into mathematical representations used to compare various faces and find potential matches. For purposes of this demo, the greater the similarity score, the more similar two faces are. A threshold setting sets the cut-off for the similarity score that is reported as a match.",
+            "is a numerical value that represents how similar two faces are. Facial recognition software converts images into mathematical representations used to compare various faces and find potential matches. For purposes of this demo, the greater the similarity score, the more similar two faces are. ",
             "    ",
                 ]),
         html.Div([
+            html.Span("Threshold: ", style={'font-weight': 'bold'}),
+            "A threshold setting sets the cut-off for the similarity score that is reported as a match.",
+        ]),
+        html.Div([
              html.Span("False Positive: ", style={"font-weight": "bold"}),
-             "occurs when images that are not of the same person are incorrectly labeled as a match because their similarity score exceeded the minimum threshold required to be considered a match.",
+             "occurs when images that are not of the same person are incorrectly labeled as a match.",
             ]),
         html.Div([
              html.Span("True Positive: ", style={"font-weight": "bold"}),
@@ -57,28 +71,27 @@ app.layout = html.Div([
             ]),
         html.Div([
             html.Span("False Negative: ", style={"font-weight": "bold"}),
-            "occurs when images that are of the same person are incorrectly labeled as not matching.",
+            "occurs when images that are actually of the same person are incorrectly labeled as not matching.",
             ]),
 
         # instructions section
         html.H3('Instructions:', id='instructions', style={'font-family': 'Monaco'}),
         html.P("1. Enter full screen in your browser. You'll see the demo has 3 main sections - 'Current Subject, 'Matches', and 'Threshold'. "),
         html.Div([
-            "2. Under 'Matches' you'll see those faces that have matched with the face under 'Current Subject'. Below each match is the similarity score between the 'Current Subject' and that match. For ease of interpretation, in this demo the larger the similarity score, the more similar two images are. The only true positive match is that which is outlined in green. All other matches are false positives.",
+            "2. Under 'Matches' you'll see those faces that have matched with the face under 'Current Subject'. Below each match is the similarity score between the 'Current Subject' and that match. For ease of interpretation, in this demo the larger the similarity score, the more similar two images are. The only true match (true positive) is that which is outlined in green. All other matches are false positives.",
                 ]),
         html.P("3. In the 'Threshold' section you'll see a slider. Move the slider by clicking on the numbered intervals. This changes the minimum similarity score required in order to be considered a match. As you move the slider, you'll see some matches fade away as their similarity score does not meet the minimum threshold you've set. "),
         html.P("4. Under 'Current Subject', you'll see a list of other options. Click through the diverse list of celebrities, playing around with the threshold slider as well. Take note of how effecitvely, or ineffectively, the software identifies true matches. "),
+        html.P("5. Compare similarity scores and thresholds across 'Current Subjects' of different races, ethnicities, and genders. "),
             ]),
 
-
-        # questions to consider section
+        # questions to consider
         html.Div([
             html.H3("Questions to Consider: ", id = "questions", style = {'font-weight': 'bold', 'font-family': 'Monaco'}),
             html.P("While you use this demo, consider the following questions."),
-            html.P("1. Compare similarity scores and thresholds across 'Current Subjects' of different races and ethnicities. What is the lowest threshold at which the software correctly identifies Aaron Piersol's face among the potential matches? What is the lowest threshold at which the software correctly identifies LeBron James' face among the potential matches? Finally, what is the lowest threshold at which the software correctly identifies Jacqueline Edwards' face among the potential matches?"),
-            html.P("2. Consider whether making facial recognition software more accurate for people of color would actually make the technology safe to use. More accurate facial recognition software that better identifies faces could contribute to policing and surveillance of communities of color, undocumented immigrants, and others. Does such a software have a place in our society?")
+            html.P("1. What is the lowest threshold at which the software correctly identifies Aaron Piersol's face? What is the lowest threshold at which the software correctly identifies LeBron James' face?? What is the lowest threshold at which the software correctly identifies Jacqueline Edwards' face?"),
+            html.P("2. Consider whether making facial recognition software more accurate for people of color would actually make the technology safe to use. More accurate facial recognition software could help policing and surveillance among communities of color, undocumented immigrants, and others. Do you think more accurate software has a place in our society?")
                 ]),
-
 
 
     # stores current subject data
