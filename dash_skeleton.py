@@ -47,12 +47,16 @@ app.layout = html.Div([
             html.H3("Terms to Know: ", id = "terms", style = {'font-weight': 'bold', 'font-family': 'Monaco'}),
             html.P("The following are some helpful terms for better understanding this demo."),
             html.Span("Similarity Score: ", style={'font-weight': 'bold'}),
-            " is a numerical value that represents how similar two faces are. Facial recognition software converts images into mathematical representations used to compare various faces and find potential matches. For purposes of this demo, the greater the similarity score, the more similar two faces are. A threshold setting sets the cut-off for the similarity score that is reported as a match.",
+            " is a numerical value that represents how similar two faces are. Facial recognition software converts images into mathematical representations used to compare various faces and find potential matches. For purposes of this demo, the greater the similarity score, the more similar two faces are. ",
             "    ",
                 ]),
         html.Div([
+             html.Span("Threshold: ", style={"font-weight": "bold"}),
+             "A threshold setting sets the cut-off for the similarity score that is reported as a match.",
+            ]),
+        html.Div([
              html.Span("False Positive: ", style={"font-weight": "bold"}),
-             "occurs when images that are not of the same person are incorrectly labeled as a match because their similarity score exceeded the minimum threshold required to be considered a match.",
+             "occurs when images that are not of the same person are incorrectly labeled as a match.",
             ]),
         html.Div([
              html.Span("True Positive: ", style={"font-weight": "bold"}),
@@ -62,7 +66,7 @@ app.layout = html.Div([
             ]),
         html.Div([
             html.Span("False Negative: ", style={"font-weight": "bold"}),
-            "occurs when images that are of the same person are incorrectly labeled as not matching.",
+            "occurs when images that are actually of the same person are incorrectly labeled as not matching.",
             ]),
 
         # instructions section
