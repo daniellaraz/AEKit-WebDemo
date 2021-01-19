@@ -38,10 +38,9 @@ app.layout = html.Div([
                 ]),
         html.Div([
              html.Span("Second, ", style={"font-weight": "bold"}),
-             " we demonstrate, as has been shown in academic and policy literature, that facial recognition software misidentifies people of color, especially women of color more often than it does white people. ",
-             "Systems are more likely to produce “false positives” on darker skin toned faces. ",
-             "When used by police officers, this raises the possibility of confrontations between police officers and members black and brown communities. ",
-             "Because of concerns about the overpolicing of these communities and unnecessary police violence, facial recognition use by police raises the risk of further harms to members of the public who already face disparate treatment. ",
+             "  this demo shows that face recognition software misidentifies women and people of color, especially women of color, more often than white men. ",
+             "This has been shown at length in academic and policy literature. ",
+             "For darker skin toned faces especially, face recognition software is more likely to produce false positives, meaning the software shows two faces to be a match, though they are not. ",
             ]),
         # terms to know section
         html.Div([
