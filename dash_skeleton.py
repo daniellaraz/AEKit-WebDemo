@@ -34,7 +34,6 @@ app.layout = html.Div([
             "The threshold setting is a cutoff point the user of the software selects — any images whose numerical value is below this cutoff are discarded and not considered matches. ",
             "Any image above this threshold, or cutoff, is considered a potential match. ",
             "Therefore, threshold settings affect the software’s accuracy, and both the selected threshold and ultimately the matches produced are judgement calls made by humans.",
-            "In fact, the default threshold settings for the two most popular facial recognition systems are set fairly low (source?).",
                 ]),
         html.Div([
              html.Span("Second, ", style={"font-weight": "bold"}),
