@@ -36,6 +36,7 @@ app.layout = html.Div([
             "Therefore, threshold settings affect the software’s accuracy, and both the selected threshold and ultimately the matches produced are judgement calls made by humans.",
                 ]),
         html.Div([
+             html.P("    "),
              html.Span("Second, ", style={"font-weight": "bold"}),
              "  this demo shows that face recognition software misidentifies women and people of color, especially women of color, more often than white men. ",
              "This has been shown at length in academic and policy literature. ",
