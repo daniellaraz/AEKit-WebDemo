@@ -371,7 +371,7 @@ def update_output(threshold, similarity, names, match):
     dash.dependencies.Output('slider-output-container', 'children'),
     [dash.dependencies.Input('threshold-slider', 'value')])
 def update_output(value):
-    return 'The minimum similarity score you have selected for a match is: "{}"'.format(value)
+    return 'The minimum similarity score you have selected for a match is: {}'.format(value)
 
 # threshold text
 @app.callback(
