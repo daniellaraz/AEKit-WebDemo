@@ -10,14 +10,14 @@ import logging
 
 
 app = dash.Dash(__name__)
-app.title = 'Face Mis-ID'
+app.title = 'Face ID Fail'
 server = app.server
 
 
 # introduction text
 app.layout = html.Div([
     html.Div([
-        html.H2("Face Mis-ID", id='title', style={'font-family': 'Monaco'}),
+        html.H2("Face ID Fail", id='title', style={'font-family': 'Monaco'}),
         html.H4("***This beta version works best in Chrome***", style={'font-family': 'Monaco'}),
         # purpose section
         html.Div([
