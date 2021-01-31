@@ -17,7 +17,7 @@ server = app.server
 # introduction text
 app.layout = html.Div([
     html.Div([
-        html.H2("Face ID Fail", id='title', style={'font-family': 'Monaco'}),
+        html.H2("Face Mis-ID", id='title', style={'font-family': 'Monaco'}),
         html.H4("***This beta version works best in Chrome***", style={'font-family': 'Monaco'}),
         # purpose section
         html.Div([
