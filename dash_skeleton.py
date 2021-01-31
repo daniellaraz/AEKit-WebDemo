@@ -10,7 +10,7 @@ import logging
 
 
 app = dash.Dash(__name__)
-app.title = 'Face ID Fail'
+app.title = 'Face Mis-ID'
 server = app.server
 
 
