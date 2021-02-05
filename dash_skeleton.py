@@ -198,32 +198,32 @@ id='subject'),
 
 
     html.Div([
-     html.H3('Case Studies:'),
-     html.Div([
+#      html.H3('Case Studies:'),
+#      html.Div([
 
-     html.Span("ICE Uses Facial Recognition To Sift State Driver's License Record", style = {'font-weight': 'bold'}),
-     ": In July of 2019, researchers at Georgetown University Law Center found that Immigration and Customs Enforcement (ICE) agents mined millions of driver's license photographs in search of facial recognition matches to target undocumented migrants who have legally obtained driver's licenses. ICE did this illegally, as they did not have congressional approval to access DMV databases of driver's license photos.  In this scenario, the use of facial recognition technology clearly put undocumented migrants at risk. Further, increased accuracy would have only heightened the danger undocumented migrants face and increased targeting of communities of color. ",
-     dcc.Link('Read NPR news coverage of this case here.', href='https://www.npr.org/2019/07/08/739491857/ice-uses-facial-recognition-to-sift-state-drivers-license-records-researchers-sa'),
-     ]),
-     html.H4(' '),
-     html.Span('Washington County Police Department', style = {'font-weight': 'bold'}),
-     ": In 2017, the Washington County Police Department in Oregon pioneered the use of Amazon's facial recognition software tool, Rekognition, to compare surveillance footage of people's faces to a database of mug shot photos in an attempt to identify burglary suspects. Oregon Live reports that deputies are permitted to run artist sketches into the search. As our demo illustrates, the use of facial recognition software often results in false positives, putting innocent people at risk of being targeted and arrested. Given the software is less accurate on people of color and results in more false positives for people of color, this community faces heightened risk of being targeted by law enforcement. The similarity threshold that the police department uses affects their rate of false positives. Although Amazon recommends only using its Rekognition tool with a 99 percent similarity threshold when identifying suspects for law enforcement purposes, police departments are not required to follow these guidelines. ",
-     dcc.Link('Read Washington Post coverage featured in Oregon Live here, ', href='https://www.oregonlive.com/washingtoncounty/2019/05/amazons-facial-recognition-technology-is-supercharging-washington-county-police.html'),
-     dcc.Link('coverage in KGW Portland Coverage here, ', href='https://www.kgw.com/article/money/aclu-calls-out-amazon-washington-co-sheriffs-office-for-facial-recognition-tech/283-557099068'),
-     dcc.Link('and read official Amazon guidelines here', href = 'https://docs.aws.amazon.com/rekognition/latest/dg/collections.html')
+#      html.Span("ICE Uses Facial Recognition To Sift State Driver's License Record", style = {'font-weight': 'bold'}),
+#      ": In July of 2019, researchers at Georgetown University Law Center found that Immigration and Customs Enforcement (ICE) agents mined millions of driver's license photographs in search of facial recognition matches to target undocumented migrants who have legally obtained driver's licenses. ICE did this illegally, as they did not have congressional approval to access DMV databases of driver's license photos.  In this scenario, the use of facial recognition technology clearly put undocumented migrants at risk. Further, increased accuracy would have only heightened the danger undocumented migrants face and increased targeting of communities of color. ",
+#      dcc.Link('Read NPR news coverage of this case here.', href='https://www.npr.org/2019/07/08/739491857/ice-uses-facial-recognition-to-sift-state-drivers-license-records-researchers-sa'),
+#      ]),
+#      html.H4(' '),
+#      html.Span('Washington County Police Department', style = {'font-weight': 'bold'}),
+#      ": In 2017, the Washington County Police Department in Oregon pioneered the use of Amazon's facial recognition software tool, Rekognition, to compare surveillance footage of people's faces to a database of mug shot photos in an attempt to identify burglary suspects. Oregon Live reports that deputies are permitted to run artist sketches into the search. As our demo illustrates, the use of facial recognition software often results in false positives, putting innocent people at risk of being targeted and arrested. Given the software is less accurate on people of color and results in more false positives for people of color, this community faces heightened risk of being targeted by law enforcement. The similarity threshold that the police department uses affects their rate of false positives. Although Amazon recommends only using its Rekognition tool with a 99 percent similarity threshold when identifying suspects for law enforcement purposes, police departments are not required to follow these guidelines. ",
+#      dcc.Link('Read Washington Post coverage featured in Oregon Live here, ', href='https://www.oregonlive.com/washingtoncounty/2019/05/amazons-facial-recognition-technology-is-supercharging-washington-county-police.html'),
+#      dcc.Link('coverage in KGW Portland Coverage here, ', href='https://www.kgw.com/article/money/aclu-calls-out-amazon-washington-co-sheriffs-office-for-facial-recognition-tech/283-557099068'),
+#      dcc.Link('and read official Amazon guidelines here', href = 'https://docs.aws.amazon.com/rekognition/latest/dg/collections.html')
 
 
     ], id = "case_studies"),
 
     html.Div([
-     html.H3('Resources:'),
-     html.Div([
-     html.Span("Facial Recognition Model", style = {'font-weight': 'bold'}),
-     ": We used Open Face's Open Source Facial Recognition model to run our images and determine matches. We ran Open Face's model using a Docker container. We edited Open Face's image comparison Python file to only compare one specified image against the entire dataset of images, instead of each image in the dataset to every other image.",
-     html.H4(' '),
-     html.Span("Images", style = {'font-weight': 'bold'}),
-     ": We obtained nearly of all our images from Labeled Faces in the Wild, an  open dataset of celebrity photos. For celebrity subjects who did not have more than one photo in the Labeled Faces in the Wild dataset, we supplemented with images from Google Image searches."
-     ]),
+#      html.H3('Resources:'),
+#      html.Div([
+#      html.Span("Facial Recognition Model", style = {'font-weight': 'bold'}),
+#      ": We used Open Face's Open Source Facial Recognition model to run our images and determine matches. We ran Open Face's model using a Docker container. We edited Open Face's image comparison Python file to only compare one specified image against the entire dataset of images, instead of each image in the dataset to every other image.",
+#      html.H4(' '),
+#      html.Span("Images", style = {'font-weight': 'bold'}),
+#      ": We obtained nearly of all our images from Labeled Faces in the Wild, an  open dataset of celebrity photos. For celebrity subjects who did not have more than one photo in the Labeled Faces in the Wild dataset, we supplemented with images from Google Image searches."
+#      ]),
     ], id = "resources")
 ])
 
