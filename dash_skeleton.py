@@ -21,8 +21,8 @@ app.layout = html.Div([
         html.H4("***This beta version works best in Chrome***", style={'font-family': 'Monaco'}),
         # purpose section
         html.Div([
-            html.H3("Purpose: ", id = 'purpose', style = {'font-weight': 'bold', 'font-family': 'Monaco'}),
-            html.P("The goal of this demo is to show you the risks of face recognition software. In the most basic terms, face recognition software attempts to match different images of faces. When images are run through face recognition software they are given a numerical value. The goal is to determine if the face in, say, Photo A belongs to the same person as in Photo B. The similarity of these photos, and whether they show the same face, is determined by the numerical value the face recognition software assigns each photo. You may have seen such software in crime and action TV shows or movies (think, CSI, Jason Bourne, Minority Report, or the Mission Impossible franchise). In these thrillers, this software is presented as error-free and foolproof. But, is it actually?"),
+#             html.H3("Purpose: ", id = 'purpose', style = {'font-weight': 'bold', 'font-family': 'Monaco'}),
+#             html.P("The goal of this demo is to show you the risks of face recognition software. In the most basic terms, face recognition software attempts to match different images of faces. When images are run through face recognition software they are given a numerical value. The goal is to determine if the face in, say, Photo A belongs to the same person as in Photo B. The similarity of these photos, and whether they show the same face, is determined by the numerical value the face recognition software assigns each photo. You may have seen such software in crime and action TV shows or movies (think, CSI, Jason Bourne, Minority Report, or the Mission Impossible franchise). In these thrillers, this software is presented as error-free and foolproof. But, is it actually?"),
         ]),
         # main points section
         html.Div([
@@ -36,48 +36,48 @@ app.layout = html.Div([
 #             "Therefore, threshold settings affect the software’s accuracy, and both the selected threshold and ultimately the matches produced are judgement calls made by humans.",
                 ]),
         html.Div([
-             html.P("    "),
-             html.Span("Second, ", style={"font-weight": "bold"}),
-             "  this demo shows that face recognition software misidentifies women and people of color, especially women of color, more often than white men. ",
-             "This has been shown at length in academic and policy literature. ",
-             "For darker skin toned faces especially, face recognition software is more likely to produce false positives, meaning the software shows two faces to be a match, though they are not. ",
+#              html.P("    "),
+#              html.Span("Second, ", style={"font-weight": "bold"}),
+#              "  this demo shows that face recognition software misidentifies women and people of color, especially women of color, more often than white men. ",
+#              "This has been shown at length in academic and policy literature. ",
+#              "For darker skin toned faces especially, face recognition software is more likely to produce false positives, meaning the software shows two faces to be a match, though they are not. ",
             ]),
         # terms to know section
         html.Div([
-            html.H3("Terms to Know: ", id = "terms", style = {'font-weight': 'bold', 'font-family': 'Monaco'}),
-            html.P("The following are some helpful terms for better understanding this demo."),
-            html.Span("Similarity Score: ", style={'font-weight': 'bold'}),
-            " is a numerical value that represents how similar two faces are. Facial recognition software converts images into mathematical representations used to compare various faces and find potential matches. For purposes of this demo, the greater the similarity score, the more similar two faces are. ",
-            "    ",
+#             html.H3("Terms to Know: ", id = "terms", style = {'font-weight': 'bold', 'font-family': 'Monaco'}),
+#             html.P("The following are some helpful terms for better understanding this demo."),
+#             html.Span("Similarity Score: ", style={'font-weight': 'bold'}),
+#             " is a numerical value that represents how similar two faces are. Facial recognition software converts images into mathematical representations used to compare various faces and find potential matches. For purposes of this demo, the greater the similarity score, the more similar two faces are. ",
+#             "    ",
                 ]),
         html.Div([
-             html.Span("Threshold: ", style={"font-weight": "bold"}),
-             "A threshold setting sets the cut-off for the similarity score that is reported as a match.",
+#              html.Span("Threshold: ", style={"font-weight": "bold"}),
+#              "A threshold setting sets the cut-off for the similarity score that is reported as a match.",
             ]),
         html.Div([
-             html.Span("False Positive: ", style={"font-weight": "bold"}),
-             "occurs when images that are not of the same person are incorrectly labeled as a match.",
+#              html.Span("False Positive: ", style={"font-weight": "bold"}),
+#              "occurs when images that are not of the same person are incorrectly labeled as a match.",
             ]),
         html.Div([
-             html.Span("True Positive: ", style={"font-weight": "bold"}),
-             "occurs when two images, which are indeed of the same person, are correctly labeled as a match. ",
-            "In our demo, true positives are outlined in ",
-             html.Span('green.', style={'background-color': '#00ff00', 'font-weight': 'bold'}),
+#              html.Span("True Positive: ", style={"font-weight": "bold"}),
+#              "occurs when two images, which are indeed of the same person, are correctly labeled as a match. ",
+#             "In our demo, true positives are outlined in ",
+#              html.Span('green.', style={'background-color': '#00ff00', 'font-weight': 'bold'}),
             ]),
         html.Div([
-            html.Span("False Negative: ", style={"font-weight": "bold"}),
-            "occurs when images that are actually of the same person are incorrectly labeled as not matching.",
+#             html.Span("False Negative: ", style={"font-weight": "bold"}),
+#             "occurs when images that are actually of the same person are incorrectly labeled as not matching.",
             ]),
 
         # instructions section
-        html.H3('Instructions:', id='instructions', style={'font-family': 'Monaco'}),
-        html.P("1. Enter full screen in your browser. You'll see the demo has 3 main sections - 'Current Subject, 'Matches', and 'Threshold'. "),
+#         html.H3('Instructions:', id='instructions', style={'font-family': 'Monaco'}),
+#         html.P("1. Enter full screen in your browser. You'll see the demo has 3 main sections - 'Current Subject, 'Matches', and 'Threshold'. "),
         html.Div([
-            "2. Under 'Matches' you'll see those faces that have matched with the face under 'Current Subject'. Below each match is the similarity score between the 'Current Subject' and that match. For ease of interpretation, in this demo the larger the similarity score, the more similar two images are. The only true positive match is that which is outlined in green. All other matches are false positives.",
-                ]),
-        html.P("3. In the 'Threshold' section you'll see a slider. Move the slider by clicking on the numbered intervals. This changes the minimum similarity score required in order to be considered a match. As you move the slider, you'll see some matches fade away as their similarity score does not meet the minimum threshold you've set. "),
-        html.P("4. Under 'Current Subject', you'll see a list of other options. Click through the diverse list of celebrities, playing around with the threshold slider as well. Take note of how effecitvely, or ineffectively, the software identifies true matches. "),
-        html.P("5. Compare similarity scores and thresholds across 'Current Subjects' of different races, ethnicities, and genders. "),
+#             "2. Under 'Matches' you'll see those faces that have matched with the face under 'Current Subject'. Below each match is the similarity score between the 'Current Subject' and that match. For ease of interpretation, in this demo the larger the similarity score, the more similar two images are. The only true positive match is that which is outlined in green. All other matches are false positives.",
+#                 ]),
+#         html.P("3. In the 'Threshold' section you'll see a slider. Move the slider by clicking on the numbered intervals. This changes the minimum similarity score required in order to be considered a match. As you move the slider, you'll see some matches fade away as their similarity score does not meet the minimum threshold you've set. "),
+#         html.P("4. Under 'Current Subject', you'll see a list of other options. Click through the diverse list of celebrities, playing around with the threshold slider as well. Take note of how effecitvely, or ineffectively, the software identifies true matches. "),
+#         html.P("5. Compare similarity scores and thresholds across 'Current Subjects' of different races, ethnicities, and genders. "),
             ]),
 
 
