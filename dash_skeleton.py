@@ -26,14 +26,14 @@ app.layout = html.Div([
         ]),
         # main points section
         html.Div([
-            html.H3("Main Points: ", id = 'mainpoints', style = {'font-weight': 'bold', 'font-family': 'Monaco'}),
-            html.P("Though there are many concerns about the use of face recognition software, this demo will show two weaknesses in particular. "),
-            html.Span("First, ", style={'font-weight': 'bold'}),
-            " the demo will show you how face recognition software relies on “threshold” settings. ",
-            "The numerical value face recognition software assigns each image is compared to the values assigned to other images. ",
-            "The threshold setting is a cutoff point the user of the software selects — any images whose numerical value is below this cutoff are discarded and not considered matches. ",
-            "Any image above this threshold, or cutoff, is considered a potential match. ",
-            "Therefore, threshold settings affect the software’s accuracy, and both the selected threshold and ultimately the matches produced are judgement calls made by humans.",
+#             html.H3("Main Points: ", id = 'mainpoints', style = {'font-weight': 'bold', 'font-family': 'Monaco'}),
+#             html.P("Though there are many concerns about the use of face recognition software, this demo will show two weaknesses in particular. "),
+#             html.Span("First, ", style={'font-weight': 'bold'}),
+#             " the demo will show you how face recognition software relies on “threshold” settings. ",
+#             "The numerical value face recognition software assigns each image is compared to the values assigned to other images. ",
+#             "The threshold setting is a cutoff point the user of the software selects — any images whose numerical value is below this cutoff are discarded and not considered matches. ",
+#             "Any image above this threshold, or cutoff, is considered a potential match. ",
+#             "Therefore, threshold settings affect the software’s accuracy, and both the selected threshold and ultimately the matches produced are judgement calls made by humans.",
                 ]),
         html.Div([
              html.P("    "),
