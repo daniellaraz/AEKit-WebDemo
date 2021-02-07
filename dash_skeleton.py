@@ -100,7 +100,7 @@ app.layout = html.Div([
 
 #    subject and radio button options to switch subject
     html.Div([
-        html.H4('Current Subject:'),
+        html.H4("Current Subject: ", id = "current", style = {'font-weight': 'bold', 'font-family': 'Monaco'}),
 
         html.Img(id='celeb'), dcc.RadioItems(
     options=[
