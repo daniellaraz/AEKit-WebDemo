@@ -44,7 +44,7 @@ app.layout = html.Div([
             ]),
         # terms to know section
         html.Div([
-            html.H3("Terms to Know: ", id = "terms", style = {'font-weight': 'bold', 'font-family': 'Inconsolata'}),
+            html.H3("Terms to Know: ", id = "terms", style = {'font-weight': 'bold', 'font-family': 'Monaco'}),
             html.P("The following are some helpful terms for better understanding this demo."),
             html.Span("Similarity Score: ", style={'font-weight': 'bold'}),
             " is a numerical value that represents how similar two faces are. Facial recognition software converts images into mathematical representations used to compare various faces and find potential matches. For purposes of this demo, the greater the similarity score, the more similar two faces are. ",
@@ -140,9 +140,7 @@ id='subject'),
 
     # creates divs for images
     html.Div([
-    html.Div([html.Div([
-        html.H4("[Threshold:] ", style = {'font-weight': 'bold', 'font-family': 'Monaco'})
-        ], id = 'threshold_title'),
+    html.Div([html.Div([html.H4("[Threshold:] ", style = {'font-weight': 'bold', 'font-family': 'Monaco'})], id = 'threshold_title'),
             dcc.Slider(
             id='threshold-slider',
             min=-0.0,
