@@ -141,7 +141,7 @@ id='subject'),
     # creates divs for images
     html.Div([
     html.Div([html.Div([
-        html.H4('Threshold:')
+        html.H4("Threshold: ", id = "thresh", style = {'font-weight': 'bold', 'font-family': 'Monaco'})
         ], id = 'threshold_title'),
             dcc.Slider(
             id='threshold-slider',
