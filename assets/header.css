@@ -1,7 +1,7 @@
 .main_wrapper {
     width : 100%;
     overflow: hidden;
-    font-family: apercu !important;
+    font-family: monaco !important;
 }
 
 
@@ -49,14 +49,14 @@
  #mismatches {
     float: right;
     position: relative;
-    margin-top: 40px;
+    margin-top: 25px;
  }
 
  #mismatch_title {
     position: absolute;
     margin-left: 115px;
     font-weight: bold;
-    margin-top: 35px;
+  /*  margin-top: 35px;*/
  }
 
 
