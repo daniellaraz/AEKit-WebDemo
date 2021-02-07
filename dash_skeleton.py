@@ -154,7 +154,7 @@ id='subject'),
          id='slider-output-container2', className = 'slider'
         ),
         html.Div([
-            html.H4('Current Matches:')
+            html.H4("Current Matches: ", style = {'font-weight': 'bold', 'font-family': 'Monaco'})
             ], id = 'matches')], id = 'slider'),
 
         html.Div([
