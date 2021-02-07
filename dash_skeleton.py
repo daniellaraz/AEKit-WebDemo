@@ -382,7 +382,7 @@ def update_output(threshold, similarity, names, match):
             if match[i]==False:
                 num_match +=1
     if num_match == 1:
-        return 'This threshold results in {} mismatch for the current subject.'.format(names)
+        return 'This threshold results in {} mismatch for the current subject.'.format(num_match)
     else:
         return 'This threshold results in {} mismatches for the current subject.'.format(num_match)
 
