@@ -57,6 +57,7 @@
     position: absolute;
     margin-left: 115px;
     font-weight: bold;
+    font-family: Monaco;
   /*  margin-top: 35px;*/
  }
 
@@ -80,7 +81,7 @@ h4 {
 }
 
 #result1, #result2, #result3, #result4, #result5, #result6, #result7, #result8 {
-  margin: 30px 30px 30px 30px;
+  margin: 10px 30px 30px 30px;
   width: 125px;
   height: 125px;
   flex-grow: 1;
