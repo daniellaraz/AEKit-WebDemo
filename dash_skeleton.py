@@ -100,7 +100,7 @@ app.layout = html.Div([
 
 #    subject and radio button options to switch subject
     html.Div([
-        html.H4("Current Subject: ", id = "current", style = {'font-weight': 'bold', 'font-family': 'Monaco'}),
+        html.H4("[Current Subject:] ", id = "current", style = {'font-weight': 'bold', 'font-family': 'Monaco'}),
 
         html.Img(id='celeb'), dcc.RadioItems(
     options=[
@@ -141,7 +141,7 @@ id='subject'),
     # creates divs for images
     html.Div([
     html.Div([html.Div([
-        html.H4("Threshold: ", id = "thresh", style = {'font-weight': 'bold', 'font-family': 'Monaco'})
+        html.H4("[Threshold:] ", style = {'font-weight': 'bold', 'font-family': 'Monaco'})
         ], id = 'threshold_title'),
             dcc.Slider(
             id='threshold-slider',
