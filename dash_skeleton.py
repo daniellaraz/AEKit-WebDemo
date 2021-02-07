@@ -632,7 +632,7 @@ def update_output(threshold):
     dash.dependencies.Output('mismatch_title', 'children'),
     [Input('threshold-slider', 'value')])
 def update_output(threshold):
-    return 'Mismatches at {} threshold'.format(threshold)
+    return 'At {} threshold:'.format(threshold)
 
 if __name__ == '__main__':
     port = os.environ.get('PORT') or 8035
