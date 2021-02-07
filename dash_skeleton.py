@@ -100,7 +100,7 @@ app.layout = html.Div([
 
 #    subject and radio button options to switch subject
     html.Div([
-        html.H4("[Current Subject:] ", id = "current", style = {'font-weight': 'bold', 'font-family': 'Monaco'}),
+        html.H4("[Subject:] ", id = "current", style = {'font-weight': 'bold', 'font-family': 'Monaco'}),
 
         html.Img(id='celeb'), dcc.RadioItems(
     options=[
@@ -152,7 +152,7 @@ id='subject'),
          id='slider-output-container2', className = 'slider'
         ),
         html.Div([
-            html.H4("[Current Matches:] ", style = {'font-weight': 'bold', 'font-family': 'Monaco'})
+            html.H4("[Matches:] ", style = {'font-weight': 'bold', 'font-family': 'Monaco'})
             ], id = 'matches')], id = 'slider'),
 
         html.Div([
