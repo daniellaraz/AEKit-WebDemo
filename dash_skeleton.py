@@ -21,26 +21,26 @@ app.layout = html.Div([
         #html.H4("***This beta version works best in Chrome***", style={'font-family': 'Monaco'}),
         # purpose section
         html.Div([
-#             html.H3("Purpose: ", id = 'purpose', style = {'font-weight': 'bold', 'font-family': 'Monaco'}),
-#             html.P("The goal of this demo is to show you the risks of face recognition software. In the most basic terms, face recognition software attempts to match different images of faces. When images are run through face recognition software they are given a numerical value. The goal is to determine if the face in, say, Photo A belongs to the same person as in Photo B. The similarity of these photos, and whether they show the same face, is determined by the numerical value the face recognition software assigns each photo. You may have seen such software in crime and action TV shows or movies (think, CSI, Jason Bourne, Minority Report, or the Mission Impossible franchise). In these thrillers, this software is presented as error-free and foolproof. But, is it actually?"),
+             html.H3("Purpose: ", id = 'purpose', style = {'font-weight': 'bold', 'font-family': 'Monaco'}),
+             html.P("The goal of this demo is to show you the risks of face recognition software. In the most basic terms, face recognition software attempts to match different images of faces. When images are run through face recognition software they are given a numerical value. The goal is to determine if the face in, say, Photo A belongs to the same person as in Photo B. The similarity of these photos, and whether they show the same face, is determined by the numerical value the face recognition software assigns each photo. You may have seen such software in crime and action TV shows or movies (think, CSI, Jason Bourne, Minority Report, or the Mission Impossible franchise). In these thrillers, this software is presented as error-free and foolproof. But, is it actually?"),
         ]),
         # main points section
         html.Div([
-#             html.H3("Main Points: ", id = 'mainpoints', style = {'font-weight': 'bold', 'font-family': 'Monaco'}),
-#             html.P("Though there are many concerns about the use of face recognition software, this demo will show two weaknesses in particular. "),
-#             html.Span("First, ", style={'font-weight': 'bold'}),
-#             " the demo will show you how face recognition software relies on “threshold” settings. ",
-#             "The numerical value face recognition software assigns each image is compared to the values assigned to other images. ",
-#             "The threshold setting is a cutoff point the user of the software selects — any images whose numerical value is below this cutoff are discarded and not considered matches. ",
-#             "Any image above this threshold, or cutoff, is considered a potential match. ",
-#             "Therefore, threshold settings affect the software’s accuracy, and both the selected threshold and ultimately the matches produced are judgement calls made by humans.",
+             html.H3("Main Points: ", id = 'mainpoints', style = {'font-weight': 'bold', 'font-family': 'Monaco'}),
+             html.P("Though there are many concerns about the use of face recognition software, this demo will show two weaknesses in particular. "),
+             html.Span("First, ", style={'font-weight': 'bold'}),
+             " the demo will show you how face recognition software relies on “threshold” settings. ",
+             "The numerical value face recognition software assigns each image is compared to the values assigned to other images. ",
+             "The threshold setting is a cutoff point the user of the software selects — any images whose numerical value is below this cutoff are discarded and not considered matches. ",
+             "Any image above this threshold, or cutoff, is considered a potential match. ",
+             "Therefore, threshold settings affect the software’s accuracy, and both the selected threshold and ultimately the matches produced are judgement calls made by humans.",
                 ]),
         html.Div([
-#              html.P("    "),
-#              html.Span("Second, ", style={"font-weight": "bold"}),
-#              "  this demo shows that face recognition software misidentifies women and people of color, especially women of color, more often than white men. ",
-#              "This has been shown at length in academic and policy literature. ",
-#              "For darker skin toned faces especially, face recognition software is more likely to produce false positives, meaning the software shows two faces to be a match, though they are not. ",
+              html.P("    "),
+              html.Span("Second, ", style={"font-weight": "bold"}),
+              "  this demo shows that face recognition software misidentifies women and people of color, especially women of color, more often than white men. ",
+              "This has been shown at length in academic and policy literature. ",
+              "For darker skin toned faces especially, face recognition software is more likely to produce false positives, meaning the software shows two faces to be a match, though they are not. ",
             ]),
         # terms to know section
         html.Div([
@@ -82,14 +82,14 @@ app.layout = html.Div([
 
 
         # questions to consider section
-#         html.Div([
-#             html.H3("Questions to Consider: ", id = "questions", style = {'font-weight': 'bold', 'font-family': 'Monaco'}),
-#             html.P("While you use this demo, consider the following questions."),
-#             html.P("1a. What is the lowest threshold at which the software correctly identifies Aaron Piersol's face?"),
-#             html.P("1b. What is the lowest threshold at which the software correctly identifies LeBron James' face?"), 
-#             html.P("1c. What is the lowest threshold at which the software correctly identifies Jacqueline Edwards' face?"),
-#             html.P("2. Consider whether making facial recognition software more accurate for people of color would actually make the technology safe to use. More accurate facial recognition software could help policing and surveillance among communities of color, undocumented immigrants, and others. Do you think more accurate software has a place in our society?")
-#                 ]),
+         html.Div([
+             html.H3("Questions to Consider: ", id = "questions", style = {'font-weight': 'bold', 'font-family': 'Monaco'}),
+             html.P("While you use this demo, consider the following questions."),
+             html.P("1a. What is the lowest threshold at which the software correctly identifies Aaron Piersol's face?"),
+             html.P("1b. What is the lowest threshold at which the software correctly identifies LeBron James' face?"), 
+             html.P("1c. What is the lowest threshold at which the software correctly identifies Jacqueline Edwards' face?"),
+             html.P("2. Consider whether making facial recognition software more accurate for people of color would actually make the technology safe to use. More accurate facial recognition software could help policing and surveillance among communities of color, undocumented immigrants, and others. Do you think more accurate software has a place in our society?")
+                 ]),
 
 
     # stores current subject data
